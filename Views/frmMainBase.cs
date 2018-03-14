@@ -59,6 +59,7 @@ namespace PassportPDF.Tools.WinForm.Views
             _removeWorkerItem = RemoveWorker;
             _initializeProgressBar = InitializeProgressBar;
             _updateProgressBar = UpdateProgressBarValue;
+            _populateThreadsComboBoxHandler = PopulateThreadsComboBox;
             _languageChangeHandler = ChangeLanguage;
             _loadAvailableLanguagesHandler = LoadAvailableLanguages;
             _promptCancellableInformationMessageEventHandler = PromptCancellableInformationMessage;
