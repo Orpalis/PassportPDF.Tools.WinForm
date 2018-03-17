@@ -50,7 +50,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
             _operationsManager = new OperationsManager();
             // Subscribe from the operations manager events
             _operationsManager.UploadOperationStartEventHandler += OnUploadStart;
-            _operationsManager.ReduceOperationStartEventHandler += OnReduceOperationStart;
+            _operationsManager.FileOperationStartEventHandler += OnFileOperationsStart;
             _operationsManager.DownloadOperationStartEventHandler += OnDownloadStart;
             _operationsManager.FileOperationsSuccesfullyCompletedEventHandler += OnFileOperationsCompletion;
             _operationsManager.RemainingTokensUpdateEventHandler += OnRemainingTokensNumberUpdated;
@@ -211,15 +211,16 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
         #region Operations events handlers
 
-        private void OnReduceOperationStart(int workerNumber, string fileName, int retries)
-        {
-            _view.NotifyWorkerProgress(workerNumber, LogMessagesUtils.GetFileOperationsStartText(fileName, retries));
-        }
-
 
         private void OnUploadStart(int workerNumber, string fileName, int retries)
         {
             _view.NotifyWorkerProgress(workerNumber, LogMessagesUtils.GetFileUploadingStartText(fileName, retries));
+        }
+
+
+        private void OnFileOperationsStart(int workerNumber, string fileName, int retries)
+        {
+            _view.NotifyWorkerProgress(workerNumber, LogMessagesUtils.GetFileOperationsStartText(fileName, retries));
         }
 
 
