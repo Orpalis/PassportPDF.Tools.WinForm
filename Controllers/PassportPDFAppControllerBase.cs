@@ -454,6 +454,19 @@ namespace PassportPDF.Tools.WinForm.Controllers
             _operationsManager.Start(threadsToLaunchCount, _view.DestinationFolder, FrameworkGlobals.ApplicationConfiguration.FileProductionRules, GetOperationWorkflow(), FrameworkGlobals.PassportInfo.PassportNumber);
             _operationsStatus = OperationsStatus.Running;
         }
+
+
+        private void ResetStats()
+        {
+            _operationsStats.ProcessedFileCount = 0;
+            _operationsStats.SuccesfullyProcessedFileCount = 0;
+            _operationsStats.UnsuccesfullyProcessedFileCount = 0;
+            _operationsStats.TotalInputSize = 0;
+            _operationsStats.TotalOutputSize = 0;
+            _operationsStats.ReductionRatio = 0;
+            _operationsStats.FileConvertedToPDFCount = 0;
+            _stopwatch.Restart();
+        }
         #endregion
 
         #region Virtual methods
@@ -487,15 +500,6 @@ namespace PassportPDF.Tools.WinForm.Controllers
             }
 
             return true;
-        }
-
-
-        protected virtual void ResetStats()
-        {
-            _operationsStats.ProcessedFileCount = 0;
-            _operationsStats.SuccesfullyProcessedFileCount = 0;
-            _operationsStats.UnsuccesfullyProcessedFileCount = 0;
-            _stopwatch.Restart();
         }
 
 
