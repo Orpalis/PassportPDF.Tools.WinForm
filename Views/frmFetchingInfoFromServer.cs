@@ -33,6 +33,8 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private string _passportToBeFetchedId;
 
+        private string _appId;
+
         private Exception _apiCallException;
 
         private PassportInfo _fetchedPassportInfo;
@@ -73,10 +75,11 @@ namespace PassportPDF.Tools.WinForm.Views
         }
 
 
-        public static bool FetchConfigurationFromPassportPDF(IWin32Window owner = null)
+        public static bool FetchConfigurationFromPassportPDF(string appId, IWin32Window owner = null)
         {
             using (frmFetchingInfoFromServer fetchWindow = new frmFetchingInfoFromServer())
             {
+                fetchWindow._appId = appId;
                 fetchWindow._passportPdfRequestWorker.RunWorkerAsync(BackgroundOperationType.FetchConfiguration);
                 fetchWindow.SetFormAppropriatePropertiesAndShow(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_configuration", FrameworkGlobals.ApplicationLanguage));
 
@@ -169,7 +172,7 @@ namespace PassportPDF.Tools.WinForm.Views
                 }
                 else if (backgroundOperationType == BackgroundOperationType.FetchConfiguration)
                 {
-                    FrameworkGlobals.FetchPassportPDFConfigurationEx();
+                    FrameworkGlobals.FetchPassportPDFConfigurationEx(_appId);
                 }
                 else if (backgroundOperationType == BackgroundOperationType.FetchOCRSupportedLanguages)
                 {

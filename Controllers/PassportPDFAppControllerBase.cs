@@ -489,7 +489,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
             }
 
             // Fetch the configuration information from the PassportPDF API
-            if (!frmFetchingInfoFromServer.FetchConfigurationFromPassportPDF())
+            if (!frmFetchingInfoFromServer.FetchConfigurationFromPassportPDF(_appInfo.AppID))
             {
                 return false;
             }
