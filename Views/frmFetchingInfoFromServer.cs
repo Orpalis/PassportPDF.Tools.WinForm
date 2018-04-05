@@ -123,7 +123,7 @@ namespace PassportPDF.Tools.WinForm.Views
                     else
                     {
                         MessageBox.Show(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages_failure", FrameworkGlobals.ApplicationLanguage),
-                            additionalMessage: PassportPDFErrorUtilities.GetErrorMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.Error.Resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.Error.Resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage), MessageBoxButtons.OK, MessageBoxIcon.Error);
                         availableLanguages = null;
                         return false;
                     }
