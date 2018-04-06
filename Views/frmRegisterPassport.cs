@@ -55,19 +55,6 @@ namespace PassportPDF.Tools.WinForm.Views
         }
 
 
-        private void btRegister_Click(object sender, EventArgs e)
-        {
-            PassportKey = txtPassport.Text;
-            DialogResult = !string.IsNullOrEmpty(PassportKey) ? DialogResult.OK : DialogResult.No;
-        }
-
-
-        private void btCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-        }
-
-
         public static PassportInfo PromptPassportRegistration(IWin32Window owner, string passportPDFAppID, string originalValidPassportKey = null)
         {
             using (frmRegisterPassport frmRegisterPassport = new frmRegisterPassport())
@@ -120,6 +107,7 @@ namespace PassportPDF.Tools.WinForm.Views
             }
         }
 
+
         private void txtPassport_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(PassportKey))
@@ -130,6 +118,25 @@ namespace PassportPDF.Tools.WinForm.Views
             {
                 btSave.Enabled = true;
             }
+        }
+
+
+        private void btRegister_Click(object sender, EventArgs e)
+        {
+            PassportKey = txtPassport.Text;
+            DialogResult = !string.IsNullOrEmpty(PassportKey) ? DialogResult.OK : DialogResult.No;
+        }
+
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+
+        private void rtbRegisterPassportInstructions_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.LinkText);
         }
     }
 }

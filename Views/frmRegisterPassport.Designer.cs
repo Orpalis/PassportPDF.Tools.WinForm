@@ -89,9 +89,8 @@ namespace PassportPDF.Tools.WinForm.Views
             this.rtbRegisterPassportInstructions.ReadOnly = true;
             this.rtbRegisterPassportInstructions.Size = new System.Drawing.Size(352, 75);
             this.rtbRegisterPassportInstructions.TabIndex = 4;
-            this.rtbRegisterPassportInstructions.Text = "Please enter your Passport Number below.\\nIn order to get one, all you need to do" +
-    " is create an account at http://www.passportpdf.com and then get your Passport N" +
-    "umber in the My Account section!";
+            this.rtbRegisterPassportInstructions.Text = "Please enter your Passport Number below.\\nIn order to get one, all you need to do is create an account at http://www.passportpdf.com and then get your Passport Number in the My Account section!";
+            this.rtbRegisterPassportInstructions.LinkClicked += rtbRegisterPassportInstructions_LinkClicked;
             // 
             // frmRegisterPassport
             // 
@@ -114,7 +113,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Passport Management";
-            this.TopMost = true;
+            this.TopMost = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 

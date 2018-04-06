@@ -69,5 +69,11 @@ namespace PassportPDF.Tools.WinForm.Views
                 LoadPassportInfo(passportInfo);
             }
         }
+
+
+        private void rtbPassportInfoInstructions_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.LinkText);
+        }
     }
 }

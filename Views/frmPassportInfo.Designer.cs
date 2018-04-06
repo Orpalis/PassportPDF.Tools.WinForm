@@ -16,6 +16,8 @@
  *
  **********************************************************************/
 
+using System.Windows.Forms;
+
 namespace PassportPDF.Tools.WinForm.Views
 {
     partial class frmPassportInfo
@@ -127,6 +129,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.rtbPassportInfoInstructions.ReadOnly = true;
             this.rtbPassportInfoInstructions.Size = new System.Drawing.Size(404, 85);
             this.rtbPassportInfoInstructions.TabIndex = 7;
+            this.rtbPassportInfoInstructions.LinkClicked += new LinkClickedEventHandler(this.rtbPassportInfoInstructions_LinkClicked);
             // 
             // lbPassportStatus
             // 
