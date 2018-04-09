@@ -550,7 +550,10 @@ namespace PassportPDF.Tools.WinForm.Views
                 cboMaxProcesses.Items.Add(counter + " - " + cboText);
                 counter++;
             }
-            cboMaxProcesses.SelectedIndex = FrameworkGlobals.ApplicationConfiguration.ThreadCount - 1;
+            if (FrameworkGlobals.PassportPDFConfiguration.SuggestedMaxClientThreads > 0)
+            {
+                cboMaxProcesses.SelectedIndex = Math.Min(FrameworkGlobals.ApplicationConfiguration.ThreadCount, FrameworkGlobals.PassportPDFConfiguration.SuggestedMaxClientThreads) - 1;
+            }
         }
 
 
