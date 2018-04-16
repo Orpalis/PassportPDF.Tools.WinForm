@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "Name": "label_aboutToolStripMenuItem",
     "ResourceIDs": "*",
@@ -83,8 +83,8 @@
     "Name": "label_TabProcessLogs",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Journal",
-      "en": "Logs"
+      "fr": "Succès",
+      "en": "Success"
     }
   },
   {
@@ -184,156 +184,11 @@
     }
   },
   {
-    "Name": "label_chkCharRepair",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Activer la réparation des caractères lors de la réduction de l'espace de couleurs",
-      "en": "Apply character repairing after threshold"
-    }
-  },
-  {
-    "Name": "label_chkDeleteOriginalFileOnSuccess",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Supprimer les fichiers d'entrée lorsqu'ils sont réduits avec succès",
-      "en": "Delete original files after succesful size reduction"
-    }
-  },
-  {
-    "Name": "label_chkDownscaleImages",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Redimensionner les images",
-      "en": "Downscale images"
-    }
-  },
-  {
-    "Name": "label_chkEnableColorDetection",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Activer la détection de couleur",
-      "en": "Enable color detection"
-    }
-  },
-
-  {
-    "Name": "label_chkFastWebView",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Activer la linéarization (affichage web plus rapide contre taille de fichier)",
-      "en": "Enable fast web view"
-    }
-  },
-  {
-    "Name": "label_chkJBIG2",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Activer la compression JBIG2 pour les images bitonales",
-      "en": "Enable JBIG2 compression for bitonal images"
-    }
-  },
-  {
-    "Name": "label_chkJPEG2000",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Activer la compression JPEG2000 pour les images en HD (PDF 1.5 et supérieur)",
-      "en": "Enable JPEG2000 compression for high definition images (PDF 1.5 and higher)"
-    }
-  },
-  {
-    "Name": "label_chkKeepWriteAcessTime",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Conserver la date de dernier accès et d'édition",
-      "en": "Keep last access and edition time"
-    }
-  },
-  {
-    "Name": "label_chkOnlyPdf",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Traiter seulement les fichiers PDF",
-      "en": "Only process PDF files"
-    }
-  },
-  {
-    "Name": "label_chkPackDocument",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Supprimer les objets non utilisés",
-      "en": "Discard unused objects"
-    }
-  },
-  {
-    "Name": "label_chkRecompressImages",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Recompresser les images",
-      "en": "Recompress images"
-    }
-  },
-  {
-    "Name": "label_chkRemoveAnnotations",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Supprimer les annotations",
-      "en": "Remove annotations"
-    }
-  },
-  {
-    "Name": "label_chkRemoveBookmarks",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Supprimer les signets",
-      "en": "Remove bookmarks"
-    }
-  },
-  {
-    "Name": "label_chkRemoveEmbeddedFiles",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Supprimer les fichiers embarqués",
-      "en": "Remove embedded files"
-    }
-  },
-  {
-    "Name": "label_chkRemoveFormFields",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Supprimer les formulaires",
-      "en": "Remove formfields"
-    }
-  },
-  {
-    "Name": "label_chkRemoveHyperlinks",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Supprimer les hyperliens",
-      "en": "Remove hyperlinks"
-    }
-  },
-  {
     "Name": "label_chkSubfolders",
     "ResourceIDs": "*",
     "LocalizedValue": {
       "fr": "Traiter les sous répertoires",
       "en": "Process subfolders"
-    }
-  },
-  {
-    "Name": "label_chkUseMRC",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Activer la compression MRC (Mixed raster content)",
-      "en": "Enable MRC (Mixed raster content) compression"
-    }
-  },
-  {
-    "Name": "label_chkPackFonts",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Optimiser les polices",
-      "en": "Optimize fonts"
     }
   },
   {
@@ -345,203 +200,11 @@
     }
   },
   {
-    "Name": "label_cmbPreferredVersion.ToolTip",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Pour les PDF, la version de sortie ne\npeut être inférieure à l'originale.\nPour les autres formats, celle-ci peut être\nn'importe laquelle parmi celles disponibles.",
-      "en": "For PDF files, the output version can \nnot be lower than the original one.\nFor other formats, the version can be \nany from among those available."
-    }
-  },
-  {
-    "Name": "label_cmbImageQuality.Items",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Basse",
-      "en": "Low"
-    }
-  },
-  {
-    "Name": "label_cmbImageQuality.Items1",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Moyenne",
-      "en": "Medium"
-    }
-  },
-  {
-    "Name": "label_cmbImageQuality.Items2",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Elevée",
-      "en": "High"
-    }
-  },
-  {
-    "Name": "label_cmbImageQuality.Items3",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Très élevée",
-      "en": "Very High"
-    }
-  },
-  {
-    "Name": "label_cmbPreferredVersion.Items",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Conserver l'originale",
-      "en": "Retain existing"
-    }
-  },
-  {
-    "Name": "label_cmbPreferredVersion.Items1",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "1.4",
-      "en": "1.4"
-    }
-  },
-  {
-    "Name": "label_cmbPreferredVersion.Items2",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "1.5",
-      "en": "1.5"
-    }
-  },
-  {
-    "Name": "label_cmbPreferredVersion.Items3",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "1.6",
-      "en": "1.6"
-    }
-  },
-  {
-    "Name": "label_cmbPreferredVersion.Items4",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "1.7",
-      "en": "1.7"
-    }
-  },
-  {
-    "Name": "label_lbDocumentContent",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Contenu du document:",
-      "en": "Document content:"
-    }
-  },
-  {
-    "Name": "label_lbInteractiveContent",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Contenu interactif:",
-      "en": "Interactive content:"
-    }
-  },
-  {
-    "Name": "label_lbCreatedFromScanner",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "PDF issu(s) d'un scanner ?",
-      "en": "PDF created from scanner?"
-    }
-  },
-  {
-    "Name": "label_lbDpi",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "dpi",
-      "en": "dpi"
-    }
-  },
-  {
-    "Name": "label_lbQuality",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Qualité:",
-      "en": "Image quality:"
-    }
-  },
-  {
-    "Name": "label_lbResolution",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Résolution finale:",
-      "en": "Downscale resolution:"
-    }
-  },
-  {
-    "Name": "label_rbScannerNo",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Non",
-      "en": "No"
-    }
-  },
-  {
-    "Name": "label_rbScannerYes",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Oui",
-      "en": "Yes"
-    }
-  },
-  {
-    "Name": "label_rbScannerUnknown",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Inconnu (détection automatique)",
-      "en": "Unknown (auto-detect)"
-    }
-  },
-  {
-    "Name": "label_tabBitmap",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Images",
-      "en": "Images"
-    }
-  },
-  {
-    "Name": "label_tabContentRemoval",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Suppression de contenu",
-      "en": "Content Removal"
-    }
-  },
-  {
     "Name": "label_tabGeneral",
     "ResourceIDs": "*",
     "LocalizedValue": {
       "fr": "Général",
       "en": "General"
-    }
-  },
-  {
-    "Name": "label_tabOutputFormat",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Format de sortie",
-      "en": "Output Format"
-    }
-  },
-  {
-    "Name": "label_tabCompression",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Compression",
-      "en": "Compression"
-    }
-  },
-  {
-    "Name": "label_lbPreferredVersion",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Version préférée:",
-      "en": "Preferred version:"
     }
   },
   {
@@ -572,8 +235,8 @@
     "Name": "label_rtbRegisterPassportInstructions",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Veuillez entrer votre numéro de passeport ci-dessous.\nPour en obtenir un, cela ne vous prendra que quelques secondes. Veuillez simplement créer un compte sur https://www.passportpdf.com avant de récupérer votre numéro de passeport depuis la section \"Mon Compte\" !",
-      "en": "Please enter your Passport Number below.\nIt only takes a few seconds to get one! All you need to do is create an account at https://www.passportpdf.com and then get your Passport Number from the \"My Account\" section!"
+      "fr": "Veuillez entrer votre numéro de passeport ci-dessous.\\nPour en obtenir un, cela ne vous prendra que quelques secondes. Veuillez simplement créer un compte sur https://www.passportpdf.com avant de récupérer votre numéro de passeport depuis la section \"Mon Compte\" !",
+      "en": "Please enter your Passport Number below.\\nIt only takes a few seconds to get one! All you need to do is create an account at https://www.passportpdf.com and then get your Passport Number from the \"My Account\" section!"
     }
   },
   {
@@ -668,16 +331,8 @@
     "Name": "label_rtbPassportInfoInstructions",
     "ResourceIDs": "",
     "LocalizedValue": {
-      "fr": "Veuillez trouver ci-dessous les informations relatives au passeport actuellement utilisé.\nVous pouvez utiliser un passeport différent à n'importe quel moment en cliquant simplement sur le stylo à côté du numéro de passeport.\nPour obtenir plus d'informations à propos de votre passeport, rendez vous dans la rubrique \"Mon Compte\" sur http://www.passportpdf.com",
-      "en": "Here are the information related the Passport currently being used. \nYou can use another Passport at any time by clicking the pen next to the Passport Number. \nIn order to obtain full information about your Passport, please visit the \"My Account\" page at http://www.passportpdf.com\n"
-    }
-  },
-  {
-    "Name": "label_tooltipPreferredVersionTitle",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Version préférée",
-      "en": "Preferred version"
+      "fr": "Veuillez trouver ci-dessous les informations relatives au passeport actuellement utilisé.\\nVous pouvez utiliser un passeport différent à n'importe quel moment en cliquant simplement sur le stylo à côté du numéro de passeport.\\nPour obtenir plus d'informations à propos de votre passeport, rendez vous dans la rubrique \"Mon Compte\" sur http://www.passportpdf.com",
+      "en": "Here are the information related the Passport currently being used. \\nYou can use another Passport at any time by clicking the pen next to the Passport Number.\\nIn order to obtain full information about your Passport, please visit the \"My Account\" page at http://www.passportpdf.com"
     }
   },
   {
@@ -790,6 +445,38 @@
     "LocalizedValue": {
       "fr": "Fichier de logs:",
       "en": "Logs file:"
+    }
+  },
+  {
+    "Name": "unicode_symbol_play",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "►",
+      "en": "►"
+    }
+  },
+  {
+    "Name": "unicode_symbol_pause",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "⏸",
+      "en": "⏸"
+    }
+  },
+  {
+    "Name": "label_cancellation",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Annulation...",
+      "en": "Cancelling..."
+    }
+  },
+  {
+    "Name": "label_stop",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Stop",
+      "en": "Stop"
     }
   }
 ]

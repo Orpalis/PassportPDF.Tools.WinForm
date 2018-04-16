@@ -617,19 +617,19 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private void SetButtonIconPause()
         {
-            cmdPause.Text = FrameworkGlobals.MessagesLocalizer.GetString("unicode_symbol_pause", FrameworkGlobals.ApplicationLanguage);
+            cmdPause.Text = Globals.LabelsLocalizer.GetString("unicode_symbol_pause", FrameworkGlobals.ApplicationLanguage);
         }
 
 
         private void SetButtonIconResume()
         {
-            cmdPause.Text = FrameworkGlobals.MessagesLocalizer.GetString("unicode_symbol_play", FrameworkGlobals.ApplicationLanguage);
+            cmdPause.Text = Globals.LabelsLocalizer.GetString("unicode_symbol_play", FrameworkGlobals.ApplicationLanguage);
         }
 
 
         private void SetCancelationButton()
         {
-            cmdRun.Text = FrameworkGlobals.MessagesLocalizer.GetString("cancellation", FrameworkGlobals.ApplicationLanguage);
+            cmdRun.Text = Globals.LabelsLocalizer.GetString("label_cancellation", FrameworkGlobals.ApplicationLanguage);
         }
 
 
@@ -665,7 +665,7 @@ namespace PassportPDF.Tools.WinForm.Views
         {
             cmdRun.Visible = true;
             _cmdRunText = cmdRun.Text;
-            cmdRun.Text = FrameworkGlobals.MessagesLocalizer.GetString("label_stop", FrameworkGlobals.ApplicationLanguage);
+            cmdRun.Text = Globals.LabelsLocalizer.GetString("label_stop", FrameworkGlobals.ApplicationLanguage);
             cmdBrowseDest.Enabled = false;
             cmdBrowseFiles.Enabled = false;
             cmdBrowseFolders.Enabled = false;
@@ -675,7 +675,7 @@ namespace PassportPDF.Tools.WinForm.Views
             menuStrip1.Enabled = false;
             logoBitmap.Visible = false;
             cmdPause.Visible = true;
-            cmdPause.Text = FrameworkGlobals.MessagesLocalizer.GetString("unicode_symbol_pause", FrameworkGlobals.ApplicationLanguage);
+            cmdPause.Text = Globals.LabelsLocalizer.GetString("unicode_symbol_pause", FrameworkGlobals.ApplicationLanguage);
         }
 
 
@@ -685,10 +685,6 @@ namespace PassportPDF.Tools.WinForm.Views
             lstWarnLog.Items.Clear();
             lstErrLog.Items.Clear();
             lstProcessLog.Items.Clear();
-            TabWarnings.Text = FrameworkGlobals.MessagesLocalizer.GetString("warnings", FrameworkGlobals.ApplicationLanguage);
-            tabErrors.Text = FrameworkGlobals.MessagesLocalizer.GetString("errors", FrameworkGlobals.ApplicationLanguage);
-            TabProcessLogs.Text = FrameworkGlobals.MessagesLocalizer.GetString("logs", FrameworkGlobals.ApplicationLanguage);
-
             prgProgress.Visible = true;
             lbStatus.Visible = false;
         }
