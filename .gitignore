@@ -4,3 +4,4 @@ bin/
 obj/
 clean.bat
 PassportPDF.Tools.WinForm.nuspec
+PassportPDF.Tools.WinForm.localization_sheet.xlsx
