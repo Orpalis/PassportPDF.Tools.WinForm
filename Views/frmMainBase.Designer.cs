@@ -189,7 +189,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.TabProcessLogs.Padding = new System.Windows.Forms.Padding(3);
             this.TabProcessLogs.Size = new System.Drawing.Size(483, 186);
             this.TabProcessLogs.TabIndex = 2;
-            this.TabProcessLogs.Text = "Logs";
+            this.TabProcessLogs.Text = "Success";
             this.TabProcessLogs.UseVisualStyleBackColor = true;
             // 
             // lstProcessLog
