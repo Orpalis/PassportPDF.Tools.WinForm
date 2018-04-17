@@ -575,21 +575,21 @@ namespace PassportPDF.Tools.WinForm.Views
         private void UpdateThreadStatusLogs(string text)
         {
             lstProcessLog.Items.Add(text);
-            TabProcessLogs.Text = FrameworkGlobals.MessagesLocalizer.GetString("logs", FrameworkGlobals.ApplicationLanguage) + " (" + lstProcessLog.Items.Count + ")";
+            TabProcessLogs.Text = Globals.LabelsLocalizer.GetString("label_TabProcessLogs", FrameworkGlobals.ApplicationLanguage) + " (" + lstProcessLog.Items.Count + ")";
         }
 
 
         private void UpdateWarningLogs(string text)
         {
             lstWarnLog.Items.Add(text);
-            TabWarnings.Text = FrameworkGlobals.MessagesLocalizer.GetString("warnings", FrameworkGlobals.ApplicationLanguage) + " (" + lstWarnLog.Items.Count + ")";
+            TabWarnings.Text = Globals.LabelsLocalizer.GetString("label_TabWarnings", FrameworkGlobals.ApplicationLanguage) + " (" + lstWarnLog.Items.Count + ")";
         }
 
 
         private void UpdateErrorsLogs(string text)
         {
             lstErrLog.Items.Add(text);
-            tabErrors.Text = FrameworkGlobals.MessagesLocalizer.GetString("errors", FrameworkGlobals.ApplicationLanguage) + " (" + lstErrLog.Items.Count + ")";
+            tabErrors.Text = Globals.LabelsLocalizer.GetString("label_tabErrors", FrameworkGlobals.ApplicationLanguage) + " (" + lstErrLog.Items.Count + ")";
         }
 
 
