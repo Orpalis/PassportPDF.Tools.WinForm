@@ -56,8 +56,9 @@ namespace PassportPDF.Tools.WinForm.Controllers
             _operationsManager.RemainingTokensUpdateEventHandler += OnRemainingTokensNumberUpdated;
             _operationsManager.WarningEventHandler += OnOperationWarning;
             _operationsManager.ErrorEventHandler += OnFileOperationError;
-            _operationsManager.WorkCompletionEventHandler += OnWorkerWorkCompletion;
-            _operationsManager.WorkPauseEventHandler += OnWorkerWorkPause;
+            _operationsManager.WorkerWorkCompletionEventHandler += OnWorkerWorkCompletion;
+            _operationsManager.OperationsCompletionEventHandler += OnOperationsCompletion;
+            _operationsManager.WorkerPauseEventHandler += OnWorkerWorkPause;
         }
 
         #region IPDFReducerController implementation
@@ -512,16 +513,17 @@ namespace PassportPDF.Tools.WinForm.Controllers
         protected virtual void OnWorkerWorkCompletion(int workerNumber)
         {
             _view.RemoveWorker(workerNumber);
+        }
 
-            if (_view.WorkerItemCount == 0)
+
+        protected virtual void OnOperationsCompletion()
+        {
+            _stopwatch.Stop();
+            _operationsStatus = OperationsStatus.Idle;
+
+            if (FrameworkGlobals.LogsManager.Error != null)
             {
-                _operationsStatus = OperationsStatus.Idle;
-                _stopwatch.Stop();
-
-                if (FrameworkGlobals.LogsManager.Error != null)
-                {
-                    _view.NotifyOperationError(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_logs_exportation_failure", FrameworkGlobals.ApplicationConfiguration.Language), additionalMessage: FrameworkGlobals.LogsManager.Error.Message));
-                }
+                _view.NotifyOperationError(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_logs_exportation_failure", FrameworkGlobals.ApplicationConfiguration.Language), additionalMessage: FrameworkGlobals.LogsManager.Error.Message));
             }
         }
 
