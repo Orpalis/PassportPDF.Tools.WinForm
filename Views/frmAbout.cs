@@ -25,12 +25,13 @@ namespace PassportPDF.Tools.WinForm.Views
 {
     public partial class frmAbout : Form
     {
-        public frmAbout(Bitmap productLogo, string productName)
+        public frmAbout(Bitmap productLogo, string productName, string githubLink)
         {
             InitializeComponent();
-            this.picProductLogo.Image = productLogo;
-            this.Text = productName;
+            picProductLogo.Image = productLogo;
+            Text = productName;
             LoadLocales();
+            lkGithub.Text = githubLink;
         }
 
         private void LoadLocales()
@@ -40,6 +41,7 @@ namespace PassportPDF.Tools.WinForm.Views
             lbBasedOn.Text = Globals.LabelsLocalizer.GetString("label_lbBasedOn", FrameworkGlobals.ApplicationLanguage);
             lkPassportPdfWebsite.Text = Globals.LabelsLocalizer.GetString("label_lkPassportPdfWebsite", FrameworkGlobals.ApplicationLanguage);
             lkOrpalisWebsite.Text = Globals.LabelsLocalizer.GetString("label_lkOrpalisWebsite", FrameworkGlobals.ApplicationLanguage);
+            lbSourceCode.Text = Globals.LabelsLocalizer.GetString("label_lbSourceCode", FrameworkGlobals.ApplicationLanguage);
         }
 
         private void btClose_Click(object sender, EventArgs e)
@@ -55,6 +57,11 @@ namespace PassportPDF.Tools.WinForm.Views
         private void btOrpalisWebsite_Clock(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.orpalis.com");
+        }
+
+        private void lkGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(lkGithub.Text);
         }
     }
 }

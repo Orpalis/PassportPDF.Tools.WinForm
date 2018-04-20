@@ -478,5 +478,13 @@
       "fr": "Stop",
       "en": "Stop"
     }
+  },
+  {
+    "Name": "label_lbSourceCode",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Code source:",
+      "en": "Source code:"
+    }
   }
 ]

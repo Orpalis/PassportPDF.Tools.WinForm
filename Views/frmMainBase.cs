@@ -887,7 +887,7 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (frmAbout about = new frmAbout(_controller.AppInfo.AppLogo, _controller.AppInfo.ProductName))
+            using (frmAbout about = new frmAbout(_controller.AppInfo.AppLogo, _controller.AppInfo.ProductName, _controller.AppInfo.AppSourceCodeUrl))
             {
                 about.ShowDialog(this);
             }
