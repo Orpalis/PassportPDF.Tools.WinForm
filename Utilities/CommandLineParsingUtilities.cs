@@ -22,7 +22,7 @@ using PassportPDF.Model;
 using PassportPDF.Tools.Framework.Configuration;
 using PassportPDF.Tools.Framework;
 
-namespace pdfReducerCloud.Utilities
+namespace PassportPDF.Tools.WinForm.Utilities
 {
     public static class CommandLineParsingUtilities
     {
