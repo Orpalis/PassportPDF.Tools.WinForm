@@ -150,6 +150,7 @@
     <Compile Include="Controllers\PassportPDFAppControllerBase.cs" />
     <Compile Include="Models\OperationsStatus.cs" />
     <Compile Include="Models\PassportPDFDesktopAppInformation.cs" />
+    <Compile Include="Utilities\CommandLineParsingUtilities.cs" />
     <Compile Include="Views\frmMainBase.cs">
       <SubType>Form</SubType>
     </Compile>
