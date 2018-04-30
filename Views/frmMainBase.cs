@@ -685,6 +685,11 @@ namespace PassportPDF.Tools.WinForm.Views
             lstWarnLog.Items.Clear();
             lstErrLog.Items.Clear();
             lstProcessLog.Items.Clear();
+
+            TabWarnings.Text = Globals.LabelsLocalizer.GetString("label_TabWarnings", FrameworkGlobals.ApplicationLanguage);
+            tabErrors.Text = Globals.LabelsLocalizer.GetString("label_tabErrors", FrameworkGlobals.ApplicationLanguage);
+            TabProcessLogs.Text = Globals.LabelsLocalizer.GetString("label_TabProcessLogs", FrameworkGlobals.ApplicationLanguage);
+
             prgProgress.Visible = true;
             lbStatus.Visible = false;
         }
