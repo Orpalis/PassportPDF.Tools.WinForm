@@ -24,6 +24,7 @@ using PassportPDF.Tools.Framework.Utilities;
 using PassportPDF.Tools.Framework.Models;
 using PassportPDF.Tools.Framework;
 using PassportPDF.Tools.Framework.Errors;
+using PassportPDF.Tools.WinForm.Utilities;
 
 namespace PassportPDF.Tools.WinForm.Views
 {
@@ -63,8 +64,8 @@ namespace PassportPDF.Tools.WinForm.Views
                 if (fetchWindow._apiCallException != null)
                 {
                     // An exception occured when calling the API
-                    MessageBox.Show(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_passport_info_synchronization_failure", FrameworkGlobals.ApplicationLanguage),
-                        additionalMessage: fetchWindow._apiCallException.Message), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogUtilities.ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_passport_info_synchronization_failure", FrameworkGlobals.ApplicationLanguage),
+                        additionalMessage: fetchWindow._apiCallException.Message), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                     return false;
                 }
                 else
@@ -86,8 +87,8 @@ namespace PassportPDF.Tools.WinForm.Views
                 if (fetchWindow._apiCallException != null)
                 {
                     // An exception occured when calling the API
-                    MessageBox.Show(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_configuration_fetching_failure", FrameworkGlobals.ApplicationLanguage),
-                        additionalMessage: fetchWindow._apiCallException.Message), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogUtilities.ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_configuration_fetching_failure", FrameworkGlobals.ApplicationLanguage),
+                        additionalMessage: fetchWindow._apiCallException.Message), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                     return false;
                 }
                 else
@@ -108,8 +109,8 @@ namespace PassportPDF.Tools.WinForm.Views
                 if (fetchWindow._apiCallException != null)
                 {
                     // An exception occured when calling the API
-                    MessageBox.Show(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages_failure", FrameworkGlobals.ApplicationLanguage),
-                        additionalMessage: fetchWindow._apiCallException.Message), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogUtilities.ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages_failure", FrameworkGlobals.ApplicationLanguage),
+                        additionalMessage: fetchWindow._apiCallException.Message), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                     availableLanguages = null;
                     return false;
                 }
@@ -122,8 +123,8 @@ namespace PassportPDF.Tools.WinForm.Views
                     }
                     else
                     {
-                        MessageBox.Show(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages_failure", FrameworkGlobals.ApplicationLanguage),
-                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.Error.Resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogUtilities.ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages_failure", FrameworkGlobals.ApplicationLanguage),
+                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.Error.Resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                         availableLanguages = null;
                         return false;
                     }

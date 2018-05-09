@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using PassportPDF.Tools.Framework.Utilities;
 using PassportPDF.Tools.Framework.Models;
 using PassportPDF.Tools.Framework;
+using PassportPDF.Tools.WinForm.Utilities;
 
 namespace PassportPDF.Tools.WinForm.Views
 {
@@ -100,7 +101,7 @@ namespace PassportPDF.Tools.WinForm.Views
                 // Register new passport number in the registry
                 if (!LicensingUtilities.RegisterPassportIdInRegister(passportPDFAppID, frmRegisterPassport.PassportKey))
                 {
-                    MessageBox.Show(FrameworkGlobals.MessagesLocalizer.GetString("message_passport_key_registering_failure", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogUtilities.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("message_passport_key_registering_failure", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                 }
 
                 return passportInfo;
