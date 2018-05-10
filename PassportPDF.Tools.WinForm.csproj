@@ -151,6 +151,7 @@
     <Compile Include="Models\OperationsStatus.cs" />
     <Compile Include="Models\PassportPDFDesktopAppInformation.cs" />
     <Compile Include="Utilities\CommandLineParsingUtilities.cs" />
+    <Compile Include="Utilities\DialogUtilities.cs" />
     <Compile Include="Views\frmMainBase.cs">
       <SubType>Form</SubType>
     </Compile>
