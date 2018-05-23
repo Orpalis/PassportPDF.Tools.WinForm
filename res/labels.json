@@ -171,8 +171,8 @@
     "Name": "label_btApply",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "OK",
-      "en": "OK"
+      "fr": "Appliquer",
+      "en": "Apply"
     }
   },
   {

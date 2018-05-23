@@ -57,6 +57,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.chkSubfolders = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabLogs = new System.Windows.Forms.TabPage();
+            this.chkTimestampLogs = new System.Windows.Forms.CheckBox();
             this.chkExportLogs = new System.Windows.Forms.CheckBox();
             this.btSelectLogFile = new System.Windows.Forms.Button();
             this.txtLogFile = new System.Windows.Forms.TextBox();
@@ -64,7 +65,6 @@ namespace PassportPDF.Tools.WinForm.Views
             this.selectLogFileFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxBanner = new System.Windows.Forms.PictureBox();
-            this.chkTimestampLogs = new System.Windows.Forms.CheckBox();
             this.tabGeneral.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabLogs.SuspendLayout();
@@ -90,7 +90,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.btApply.Name = "btApply";
             this.btApply.Size = new System.Drawing.Size(103, 31);
             this.btApply.TabIndex = 7;
-            this.btApply.Text = "OK";
+            this.btApply.Text = "Apply";
             this.btApply.UseVisualStyleBackColor = true;
             this.btApply.Click += new System.EventHandler(this.btApply_click);
             // 
@@ -179,6 +179,16 @@ namespace PassportPDF.Tools.WinForm.Views
             this.tabLogs.Text = "Logs";
             this.tabLogs.UseVisualStyleBackColor = true;
             // 
+            // chkTimestampLogs
+            // 
+            this.chkTimestampLogs.AutoSize = true;
+            this.chkTimestampLogs.Location = new System.Drawing.Point(15, 15);
+            this.chkTimestampLogs.Name = "chkTimestampLogs";
+            this.chkTimestampLogs.Size = new System.Drawing.Size(144, 17);
+            this.chkTimestampLogs.TabIndex = 26;
+            this.chkTimestampLogs.Text = "Timestamp log messages";
+            this.chkTimestampLogs.UseVisualStyleBackColor = true;
+            // 
             // chkExportLogs
             // 
             this.chkExportLogs.AutoSize = true;
@@ -242,16 +252,6 @@ namespace PassportPDF.Tools.WinForm.Views
             this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBanner.TabIndex = 4;
             this.pictureBoxBanner.TabStop = false;
-            // 
-            // chkTimestampLogs
-            // 
-            this.chkTimestampLogs.AutoSize = true;
-            this.chkTimestampLogs.Location = new System.Drawing.Point(15, 15);
-            this.chkTimestampLogs.Name = "chkTimestampLogs";
-            this.chkTimestampLogs.Size = new System.Drawing.Size(144, 17);
-            this.chkTimestampLogs.TabIndex = 26;
-            this.chkTimestampLogs.Text = "Timestamp log messages";
-            this.chkTimestampLogs.UseVisualStyleBackColor = true;
             // 
             // frmOptionsBase
             // 
