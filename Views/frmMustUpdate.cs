@@ -19,7 +19,6 @@
 using System;
 using System.Windows.Forms;
 using PassportPDF.Tools.Framework;
-using System.Threading;
 
 namespace PassportPDF.Tools.WinForm.Views
 {
