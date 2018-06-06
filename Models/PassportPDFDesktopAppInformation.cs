@@ -37,6 +37,8 @@ namespace PassportPDF.Tools.WinForm.Models
 
         public Bitmap AppLogo { get; }
 
+        public AcceptedInputFilesType InputFilesType { get; }
+
         public string ConfigurationFilePath { get; }
 
         public bool AutoRun { get; }
@@ -44,7 +46,7 @@ namespace PassportPDF.Tools.WinForm.Models
         public string[] CommandLineArguments { get; }
 
 
-        public PassportPDFDesktopAppInformation(string productName, string appID, string appExecutableName, string appSourceCodeUrl, Version appVersion, Icon appIcon, Bitmap appLogo, string configurationFilePath, bool autoRun, string[] commandLineArgs)
+        public PassportPDFDesktopAppInformation(string productName, string appID, string appExecutableName, string appSourceCodeUrl, Version appVersion, Icon appIcon, Bitmap appLogo, AcceptedInputFilesType acceptedInputFilesType, string configurationFilePath, bool autoRun, string[] commandLineArgs)
         {
             ProductName = productName;
             AppID = appID;
@@ -53,9 +55,17 @@ namespace PassportPDF.Tools.WinForm.Models
             AppVersion = appVersion;
             AppIcon = appIcon;
             AppLogo = appLogo;
+            InputFilesType = acceptedInputFilesType;
             ConfigurationFilePath = configurationFilePath;
             AutoRun = autoRun;
             CommandLineArguments = commandLineArgs;
+        }
+
+
+        public enum AcceptedInputFilesType
+        {
+            Document,
+            Image
         }
     }
 }

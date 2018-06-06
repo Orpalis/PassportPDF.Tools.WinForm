@@ -26,7 +26,7 @@ namespace PassportPDF.Tools.WinForm.Utilities
 {
     public static class CommandLineParsingUtilities
     {
-        public static void ParseCommandLineArgs(string[] args, ApplicationConfiguration applicationConfiguration, ReduceActionConfiguration reduceActionConfiguration = null, OCRActionConfiguration ocrActionConfiguration = null)
+        public static void ParseCommandLineArgs(string[] args, ApplicationConfiguration applicationConfiguration, PDFReduceActionConfiguration reduceActionConfiguration = null, PDFOCRActionConfiguration ocrActionConfiguration = null, ImageSaveAsPDFActionConfiguration imageSaveAsPdfActionConfiguration = null)
         {
             for (int index = 0; index < args.Length; index++)
             {
@@ -39,6 +39,10 @@ namespace PassportPDF.Tools.WinForm.Utilities
                     if (ocrActionConfiguration != null)
                     {
                         ParseOCRActionConfigurationArgument(args, index, ocrActionConfiguration);
+                    }
+                    if (imageSaveAsPdfActionConfiguration != null)
+                    {
+                        ParseSaveImageAsPdfConfigurationArgument(args, index, imageSaveAsPdfActionConfiguration);
                     }
                 }
             }
@@ -131,7 +135,7 @@ namespace PassportPDF.Tools.WinForm.Utilities
         }
 
 
-        private static void ParseReduceActionConfigurationArgument(string[] args, int index, ReduceActionConfiguration reduceActionConfiguration)
+        private static void ParseReduceActionConfigurationArgument(string[] args, int index, PDFReduceActionConfiguration reduceActionConfiguration)
         {
             switch (args[index].ToString())
             {
@@ -230,7 +234,7 @@ namespace PassportPDF.Tools.WinForm.Utilities
         }
 
 
-        private static void ParseOCRActionConfigurationArgument(string[] args, int index, OCRActionConfiguration ocrActionConfiguration)
+        private static void ParseOCRActionConfigurationArgument(string[] args, int index, PDFOCRActionConfiguration ocrActionConfiguration)
         {
             switch (args[index].ToUpper())
             {
@@ -245,6 +249,12 @@ namespace PassportPDF.Tools.WinForm.Utilities
                     ocrActionConfiguration.SkipPagesWithText = true;
                     break;
             }
+        }
+
+
+        private static void ParseSaveImageAsPdfConfigurationArgument(string[] args, int index, ImageSaveAsPDFActionConfiguration imageSaveAsPdfActionConfiguration)
+        {
+            //todo: implement
         }
     }
 }

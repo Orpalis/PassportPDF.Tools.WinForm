@@ -42,6 +42,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
         protected readonly Stopwatch _stopwatch;
         protected IPassportPDFAppMainView _view;
         protected OperationsStatus _operationsStatus;
+        protected string[] _supportedInputFileExtensions;
 
         public PassportPDFAppControllerBase(PassportPDFDesktopAppInformation appInfo)
         {
@@ -96,6 +97,9 @@ namespace PassportPDF.Tools.WinForm.Controllers
                 return;
             }
 
+            _supportedInputFileExtensions = AppInfo.InputFilesType == PassportPDFDesktopAppInformation.AcceptedInputFilesType.Document ?
+                FrameworkGlobals.PassportPDFConfiguration.PdfApiSupportedFileFormatExtensions : FrameworkGlobals.PassportPDFConfiguration.ImageApiSupportedFileFormatExtensions;
+
             _view.LoadLabels();
             _view.PopulateThreadsComboBox();
             _view.LoadAvailableLanguages();
@@ -141,13 +145,13 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
         public void OnStartOperationsRequested()
         {
-            HandleFileOperationsPreperationResult(FileToProcessCollector.ProceedToFileCollection(_view.SourcePath, _view.DestinationFolder));
+            HandleFileOperationsPreperationResult(FileToProcessCollector.ProceedToFileCollection(_view.SourcePath, _view.DestinationFolder, _supportedInputFileExtensions));
         }
 
 
         public void OnDragAndDrop(string[] data)
         {
-            HandleFileOperationsPreperationResult(FileToProcessCollector.ProceedToFileCollection(data, _view.DestinationFolder, false));
+            HandleFileOperationsPreperationResult(FileToProcessCollector.ProceedToFileCollection(data, _view.DestinationFolder, _supportedInputFileExtensions, false));
         }
 
 

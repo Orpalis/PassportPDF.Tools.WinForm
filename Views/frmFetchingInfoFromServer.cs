@@ -28,6 +28,7 @@ using PassportPDF.Tools.WinForm.Utilities;
 
 namespace PassportPDF.Tools.WinForm.Views
 {
+    // todo: the messages used in this class must be localized in this library and not in PassportPDF.Tools.Framework.
     public partial class frmFetchingInfoFromServer : Form
     {
         private readonly BackgroundWorker _passportPdfRequestWorker;
@@ -139,13 +140,13 @@ namespace PassportPDF.Tools.WinForm.Views
             toolTipFetchingInfoFromServer.SetToolTip(this.loaderImage, text);
             if (owner != null)
             {
-                this.StartPosition = FormStartPosition.CenterParent;
-                this.ShowDialog(owner);
+                StartPosition = FormStartPosition.CenterParent;
+                ShowDialog(owner);
             }
             else
             {
-                this.StartPosition = FormStartPosition.CenterScreen;
-                this.ShowDialog();
+                StartPosition = FormStartPosition.CenterScreen;
+                ShowDialog();
             }
         }
 
@@ -197,7 +198,7 @@ namespace PassportPDF.Tools.WinForm.Views
         {
             FetchPassportInfo,
             FetchConfiguration,
-            FetchOCRSupportedLanguages
+            FetchOCRSupportedLanguages,
         }
     }
 }
