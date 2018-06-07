@@ -235,8 +235,8 @@
     "Name": "label_rtbRegisterPassportInstructions",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Veuillez entrer votre numéro de passeport ci-dessous.\\nPour en obtenir un, cela ne vous prendra que quelques secondes. Veuillez simplement créer un compte sur https://www.passportpdf.com avant de récupérer votre numéro de passeport depuis la section \"Mon Compte\" !",
-      "en": "Please enter your Passport Number below.\\nIt only takes a few seconds to get one! All you need to do is create an account at https://www.passportpdf.com and then get your Passport Number from the \"My Account\" section!"
+      "fr": "Veuillez entrer votre numéro de passeport ci-dessous.\nPour en obtenir un, cela ne vous prendra que quelques secondes. Veuillez simplement créer un compte sur https://www.passportpdf.com avant de récupérer votre numéro de passeport depuis la section \"Mon Compte\" !",
+      "en": "Please enter your Passport Number below.\nIt only takes a few seconds to get one! All you need to do is create an account at https://www.passportpdf.com and then get your Passport Number from the \"My Account\" section!"
     }
   },
   {
@@ -331,8 +331,8 @@
     "Name": "label_rtbPassportInfoInstructions",
     "ResourceIDs": "",
     "LocalizedValue": {
-      "fr": "Veuillez trouver ci-dessous les informations relatives au passeport actuellement utilisé.\\nVous pouvez utiliser un passeport différent à n'importe quel moment en cliquant simplement sur le stylo à côté du numéro de passeport.\\nPour obtenir plus d'informations à propos de votre passeport, rendez vous dans la rubrique \"Mon Compte\" sur http://www.passportpdf.com",
-      "en": "Here are the information related the Passport currently being used. \\nYou can use another Passport at any time by clicking the pen next to the Passport Number.\\nIn order to obtain full information about your Passport, please visit the \"My Account\" page at http://www.passportpdf.com"
+      "fr": "Veuillez trouver ci-dessous les informations relatives au passeport actuellement utilisé.\nVous pouvez utiliser un passeport différent à n'importe quel moment en cliquant simplement sur le stylo à côté du numéro de passeport.\nPour obtenir plus d'informations à propos de votre passeport, rendez vous dans la rubrique \"Mon Compte\" sur http://www.passportpdf.com",
+      "en": "Here are the information related the Passport currently being used. \nYou can use another Passport at any time by clicking the pen next to the Passport Number.\nIn order to obtain full information about your Passport, please visit the \"My Account\" page at http://www.passportpdf.com"
     }
   },
   {
