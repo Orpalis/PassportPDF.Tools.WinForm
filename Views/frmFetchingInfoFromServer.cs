@@ -19,6 +19,7 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using PassportPDF.Api;
 using PassportPDF.Model;
 using PassportPDF.Tools.Framework.Utilities;
 using PassportPDF.Tools.Framework.Models;
@@ -37,6 +38,10 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private string _appId;
 
+        private Version _appVersion;
+
+        private bool? _currentAppVersionIsSupported;
+
         private Exception _apiCallException;
 
         private PassportInfo _fetchedPassportInfo;
@@ -53,13 +58,27 @@ namespace PassportPDF.Tools.WinForm.Views
         }
 
 
+        public static bool? IsCurrentApplicationVersionSupported(string appId, Version currentVersion, IWin32Window owner = null)
+        {
+            using (frmFetchingInfoFromServer fetchWindow = new frmFetchingInfoFromServer())
+            {
+                fetchWindow._appId = appId;
+                fetchWindow._appVersion = currentVersion;
+                fetchWindow._passportPdfRequestWorker.RunWorkerAsync(BackgroundOperationType.CheckCurrentAppVersionIsSupported);
+                fetchWindow.SetFormFetchingMessageAndShowUntilWorkCompletion(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_app_minimum_version", FrameworkGlobals.ApplicationLanguage));
+
+                return fetchWindow._currentAppVersionIsSupported;
+            }
+        }
+
+
         public static bool TryFetchPassportInfoFromPassportPDF(string passportId, out PassportInfo passportInfo, IWin32Window owner = null)
         {
             using (frmFetchingInfoFromServer fetchWindow = new frmFetchingInfoFromServer())
             {
                 fetchWindow._passportToBeFetchedId = passportId;
                 fetchWindow._passportPdfRequestWorker.RunWorkerAsync(BackgroundOperationType.FetchPassportInfo);
-                fetchWindow.SetFormAppropriatePropertiesAndShow(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_passport_info", FrameworkGlobals.ApplicationLanguage));
+                fetchWindow.SetFormFetchingMessageAndShowUntilWorkCompletion(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_passport_info", FrameworkGlobals.ApplicationLanguage));
                 passportInfo = fetchWindow._fetchedPassportInfo;
 
                 if (fetchWindow._apiCallException != null)
@@ -83,7 +102,7 @@ namespace PassportPDF.Tools.WinForm.Views
             {
                 fetchWindow._appId = appId;
                 fetchWindow._passportPdfRequestWorker.RunWorkerAsync(BackgroundOperationType.FetchConfiguration);
-                fetchWindow.SetFormAppropriatePropertiesAndShow(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_configuration", FrameworkGlobals.ApplicationLanguage));
+                fetchWindow.SetFormFetchingMessageAndShowUntilWorkCompletion(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_configuration", FrameworkGlobals.ApplicationLanguage));
 
                 if (fetchWindow._apiCallException != null)
                 {
@@ -105,7 +124,7 @@ namespace PassportPDF.Tools.WinForm.Views
             using (frmFetchingInfoFromServer fetchWindow = new frmFetchingInfoFromServer())
             {
                 fetchWindow._passportPdfRequestWorker.RunWorkerAsync(BackgroundOperationType.FetchOCRSupportedLanguages);
-                fetchWindow.SetFormAppropriatePropertiesAndShow(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages", FrameworkGlobals.ApplicationLanguage));
+                fetchWindow.SetFormFetchingMessageAndShowUntilWorkCompletion(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages", FrameworkGlobals.ApplicationLanguage));
 
                 if (fetchWindow._apiCallException != null)
                 {
@@ -135,9 +154,9 @@ namespace PassportPDF.Tools.WinForm.Views
 
 
         // Blocks the executing thread until the Background worker completion event is raised
-        private void SetFormAppropriatePropertiesAndShow(IWin32Window owner, string text)
+        private void SetFormFetchingMessageAndShowUntilWorkCompletion(IWin32Window owner, string text)
         {
-            toolTipFetchingInfoFromServer.SetToolTip(this.loaderImage, text);
+            toolTipFetchingInfoFromServer.SetToolTip(loaderImage, text);
             if (owner != null)
             {
                 StartPosition = FormStartPosition.CenterParent;
@@ -157,6 +176,10 @@ namespace PassportPDF.Tools.WinForm.Views
 
             try
             {
+                if (backgroundOperationType == BackgroundOperationType.CheckCurrentAppVersionIsSupported)
+                {
+                    _currentAppVersionIsSupported = PassportPDFApplicationUpdateUtilities.IsCurrentApplicationVersionSupported(_appId, _appVersion);
+                }
                 if (backgroundOperationType == BackgroundOperationType.FetchPassportInfo)
                 {
                     PassportPDFPassport passportPdfPassport = PassportPDFRequestsUtilities.GetPassportInfo(_passportToBeFetchedId);
@@ -196,6 +219,7 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private enum BackgroundOperationType
         {
+            CheckCurrentAppVersionIsSupported,
             FetchPassportInfo,
             FetchConfiguration,
             FetchOCRSupportedLanguages,

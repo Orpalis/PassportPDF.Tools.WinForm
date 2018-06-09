@@ -295,7 +295,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
         private bool EnsureCurrentAppVersionIsSupported()
         {
-            bool? isCurrentAppVersionSupported = PassportPDFApplicationUpdateUtilities.IsCurrentApplicationVersionSupported(_appInfo.AppID, _appInfo.AppVersion);
+            bool? isCurrentAppVersionSupported = frmFetchingInfoFromServer.IsCurrentApplicationVersionSupported(_appInfo.AppID, _appInfo.AppVersion);
 
             if (isCurrentAppVersionSupported == false)
             {
@@ -305,8 +305,8 @@ namespace PassportPDF.Tools.WinForm.Controllers
             }
             else if (isCurrentAppVersionSupported == null)
             {
-                DialogUtilities.ShowWarningMessage(FrameworkGlobals.MessagesLocalizer.GetString("message_failed_to_retrieve_minimum_version", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_warning", FrameworkGlobals.ApplicationLanguage));
-                return true;
+                DialogUtilities.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("message_failed_to_reach_server", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                return false;
             }
             else
             {
