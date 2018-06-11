@@ -54,6 +54,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
             _operationsManager.UploadOperationStartEventHandler += OnUploadStart;
             _operationsManager.FileOperationStartEventHandler += OnFileOperationsStart;
             _operationsManager.DownloadOperationStartEventHandler += OnDownloadStart;
+            _operationsManager.FileChunkProcessingProgressEventHandler += OnFileProcessingChunkProgress;
             _operationsManager.FileOperationsSuccesfullyCompletedEventHandler += OnFileOperationsCompletion;
             _operationsManager.RemainingTokensUpdateEventHandler += OnRemainingTokensNumberUpdated;
             _operationsManager.WarningEventHandler += OnOperationWarning;
@@ -233,6 +234,12 @@ namespace PassportPDF.Tools.WinForm.Controllers
         private void OnDownloadStart(int workerNumber, string fileName, int retries)
         {
             _view.NotifyWorkerProgress(workerNumber, LogMessagesUtils.GetFileDownloadingStartText(fileName, retries));
+        }
+
+
+        private void OnFileProcessingChunkProgress(int workerNumber, string fileName, int chunkNumber, int chunkCount, int retries)
+        {
+            _view.NotifyWorkerProgress(workerNumber, LogMessagesUtils.GetFileChunkProcessingProgressText(fileName, chunkNumber, chunkCount, retries));
         }
 
 
