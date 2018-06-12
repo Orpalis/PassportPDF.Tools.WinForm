@@ -237,9 +237,9 @@ namespace PassportPDF.Tools.WinForm.Controllers
         }
 
 
-        private void OnFileProcessingChunkProgress(int workerNumber, string fileName, int chunkNumber, int chunkCount, int retries)
+        private void OnFileProcessingChunkProgress(int workerNumber, string fileName, string pageRange, int pageCount, int retries)
         {
-            _view.NotifyWorkerProgress(workerNumber, LogMessagesUtils.GetFileChunkProcessingProgressText(fileName, chunkNumber, chunkCount, retries));
+            _view.NotifyWorkerProgress(workerNumber, LogMessagesUtils.GetFileChunkProcessingProgressText(fileName, pageRange, pageCount, retries));
         }
 
 
