@@ -838,8 +838,11 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
-            FrameworkGlobals.ApplicationConfiguration.MinimizedWindow = WindowState == FormWindowState.Minimized;
-            Refresh();
+            if (FrameworkGlobals.ApplicationConfiguration != null)
+            {
+                FrameworkGlobals.ApplicationConfiguration.MinimizedWindow = WindowState == FormWindowState.Minimized;
+            }
+                Refresh();
         }
 
         #endregion //Control interactions event handlers
