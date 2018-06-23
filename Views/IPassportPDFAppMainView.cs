@@ -43,6 +43,12 @@ namespace PassportPDF.Tools.WinForm.Views
         void NotifyOperationsResult(string message);
         void RemoveWorker(int workerNumber);
 
+        void ShowInformationMessage(string informationMessage, string caption);
+        void ShowWarningMessage(string warningMessage, string caption);
+        void ShowErrorMessage(string errorMessage, string caption);
+        bool PromptCancellableInformationMessage(string informationMessage, string caption);
+        bool PromptCancellableWarningMessage(string warningMessage, string caption);
+
         int WorkerItemCount { get; }
         int FileToBeProcessedCount { set; }
         int ProcessedFileCount { set; }

@@ -190,7 +190,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
                 if (updateSuccess)
                 {
-                    if (DialogUtilities.PromptCancellableInformationMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_success_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage)))
+                    if (_view.PromptCancellableInformationMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_success_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage)))
                     {
                         PassportPDFApplicationUpdateUtilities.StartUpdatedAppInstallation(downloadedUpdatedAppFilePath, _appInfo.AppExecutableName);
                         _view.ExitApplication();
@@ -312,7 +312,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
             }
             else if (isCurrentAppVersionSupported == null)
             {
-                DialogUtilities.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("message_failed_to_reach_server", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("message_failed_to_reach_server", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                 return false;
             }
             else
@@ -340,11 +340,11 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
                 if (!updateSuccess)
                 {
-                    DialogUtilities.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_failure_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                    _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_failure_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                 }
                 else
                 {
-                    if (DialogUtilities.PromptCancellableInformationMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_success_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage)))
+                    if (_view.PromptCancellableInformationMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_success_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage)))
                     {
                         PassportPDFApplicationUpdateUtilities.StartUpdatedAppInstallation(downloadedUpdatedAppFilePath, _appInfo.AppExecutableName);
                     }
@@ -424,17 +424,17 @@ namespace PassportPDF.Tools.WinForm.Controllers
             switch (fileOperationsPreparationResult.ResultType)
             {
                 case FileToProcessCollector.OperationsPreparationResultType.UnfullfiledWithError:
-                    DialogUtilities.ShowErrorMessage(fileOperationsPreparationResult.ResultMessage, FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                    _view.ShowErrorMessage(fileOperationsPreparationResult.ResultMessage, FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                     mustLaunchOperations = false;
                     break;
 
                 case FileToProcessCollector.OperationsPreparationResultType.Unfullfilled:
-                    DialogUtilities.ShowInformationMessage(fileOperationsPreparationResult.ResultMessage, FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage));
+                    _view.ShowInformationMessage(fileOperationsPreparationResult.ResultMessage, FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage));
                     mustLaunchOperations = false;
                     break;
 
                 case FileToProcessCollector.OperationsPreparationResultType.SuccessWithWarning:
-                    mustLaunchOperations = DialogUtilities.PromptCancellableWarningMessage(fileOperationsPreparationResult.ResultMessage, FrameworkGlobals.MessagesLocalizer.GetString("caption_warning", FrameworkGlobals.ApplicationLanguage));
+                    mustLaunchOperations = _view.PromptCancellableWarningMessage(fileOperationsPreparationResult.ResultMessage, FrameworkGlobals.MessagesLocalizer.GetString("caption_warning", FrameworkGlobals.ApplicationLanguage));
                     break;
 
                 default:
@@ -492,7 +492,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
             }
             catch (Exception)
             {
-                DialogUtilities.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailure", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailureTitle", FrameworkGlobals.ApplicationLanguage));
+                _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailure", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailureTitle", FrameworkGlobals.ApplicationLanguage));
                 FrameworkGlobals.ApplicationConfiguration = ConfigurationManager.ResetDefaultApplicationConfiguration();
             }
 

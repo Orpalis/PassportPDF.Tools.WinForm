@@ -61,6 +61,11 @@ namespace PassportPDF.Tools.WinForm.Views
             _initializeProgressBar = InitializeProgressBar;
             _updateProgressBar = UpdateProgressBarValue;
             _populateThreadsComboBoxHandler = PopulateThreadsComboBox;
+            _promptCancellableInformationMessageHandler = DialogUtilities.PromptCancellableInformationMessage;
+            _promptCancellableWarningMessageHandler = DialogUtilities.PromptCancellableWarningMessage;
+            _showInformationMessageHandler = DialogUtilities.ShowInformationMessage;
+            _showWarningMessageHandler = DialogUtilities.ShowWarningMessage;
+            _showErrorMessageHandler = DialogUtilities.ShowErrorMessage;
             _languageChangeHandler = ChangeLanguage;
             _loadAvailableLanguagesHandler = LoadAvailableLanguages;
             _resetViewHandler = ResetView;
@@ -96,6 +101,9 @@ namespace PassportPDF.Tools.WinForm.Views
         private delegate void UpdateUIProgressDelegate(int workerNumber, string text);
         private delegate void UpdateWorkerListDelegate(int threadNumber);
 
+        private delegate void PromptMessageDelegate(string message, string caption);
+        private delegate bool PromptCancellableMessageDelegate(string message, string caption);
+
         private delegate void ViewStateDelegate();
 
         private readonly UpdateProgressBarDelegate _initializeProgressBar;
@@ -108,6 +116,12 @@ namespace PassportPDF.Tools.WinForm.Views
         private readonly UpdateUITextDelegate _reduceWarningEventHandler;
         private readonly UpdateUITextDelegate _reduceCompletionEventHandler;
         private readonly UpdateUITextDelegate _showOperationsResultHandler;
+
+        private readonly PromptMessageDelegate _showInformationMessageHandler;
+        private readonly PromptMessageDelegate _showErrorMessageHandler;
+        private readonly PromptMessageDelegate _showWarningMessageHandler;
+        private readonly PromptCancellableMessageDelegate _promptCancellableWarningMessageHandler;
+        private readonly PromptCancellableMessageDelegate _promptCancellableInformationMessageHandler;
 
         private readonly UpdateUIProgressDelegate _operationProgressEventHandler;
 
@@ -266,6 +280,71 @@ namespace PassportPDF.Tools.WinForm.Views
             else
             {
                 ShowOperationsResult(workResultMessage);
+            }
+        }
+
+
+        public void ShowInformationMessage(string informationMessage, string caption)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(_showInformationMessageHandler, informationMessage, caption);
+            }
+            else
+            {
+                DialogUtilities.ShowInformationMessage(informationMessage, caption);
+            }
+        }
+
+
+        public void ShowWarningMessage(string warningMessage, string caption)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(_showWarningMessageHandler, warningMessage, caption);
+            }
+            else
+            {
+                DialogUtilities.ShowWarningMessage(warningMessage, caption);
+            }
+        }
+
+
+        public void ShowErrorMessage(string errorMessage, string caption)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(_showErrorMessageHandler, errorMessage, caption);
+            }
+            else
+            {
+                DialogUtilities.ShowErrorMessage(errorMessage, caption);
+            }
+        }
+
+
+        public bool PromptCancellableInformationMessage(string informationMessage, string caption)
+        {
+            if (InvokeRequired)
+            {
+                return (bool)Invoke(_promptCancellableInformationMessageHandler, informationMessage, caption);
+            }
+            else
+            {
+                return DialogUtilities.PromptCancellableInformationMessage(informationMessage, caption);
+            }
+        }
+
+
+        public bool PromptCancellableWarningMessage(string warningMessage, string caption)
+        {
+            if (InvokeRequired)
+            {
+                return (bool)Invoke(_promptCancellableWarningMessageHandler, warningMessage, caption);
+            }
+            else
+            {
+                return DialogUtilities.PromptCancellableWarningMessage(warningMessage, caption);
             }
         }
 
@@ -827,11 +906,11 @@ namespace PassportPDF.Tools.WinForm.Views
             }
             else if (newVersionAvailable == false)
             {
-                DialogUtilities.ShowInformationMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_already_up_to_date", FrameworkGlobals.ApplicationLanguage), applicationName: _controller.AppInfo.ProductName), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage));
+                ShowInformationMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_already_up_to_date", FrameworkGlobals.ApplicationLanguage), applicationName: _controller.AppInfo.ProductName), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage));
             }
             else
             {
-                DialogUtilities.ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_failed_to_retrieve_latest_version", FrameworkGlobals.ApplicationLanguage), applicationName: _controller.AppInfo.ProductName), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_failed_to_retrieve_latest_version", FrameworkGlobals.ApplicationLanguage), applicationName: _controller.AppInfo.ProductName), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
             }
         }
 
@@ -842,7 +921,7 @@ namespace PassportPDF.Tools.WinForm.Views
             {
                 FrameworkGlobals.ApplicationConfiguration.MinimizedWindow = WindowState == FormWindowState.Minimized;
             }
-                Refresh();
+            Refresh();
         }
 
         #endregion //Control interactions event handlers
