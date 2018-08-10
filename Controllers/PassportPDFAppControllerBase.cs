@@ -186,16 +186,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
         {
             if (frmNewVersionAvailable.PromptApplicationUpdate(_view.WindowInstance, newVersionNumber, _appInfo.ProductName))
             {
-                bool updateSuccess = DownloadLatestVersion(out string downloadedUpdatedAppFilePath);
-
-                if (updateSuccess)
-                {
-                    if (_view.PromptCancellableInformationMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_success_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage)))
-                    {
-                        PassportPDFApplicationUpdateUtilities.StartUpdatedAppInstallation(downloadedUpdatedAppFilePath, _appInfo.AppExecutableName);
-                        _view.ExitApplication();
-                    }
-                }
+                HandleApplicationUpdate();
             }
         }
 
@@ -324,7 +315,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
         private void CheckForApplicationUpdate()
         {
-            if (PassportPDFApplicationUpdateUtilities.IsNewVersionAvailable(_appInfo.AppID, _appInfo.AppVersion, out string latestVersionNumber) == true)
+            if (frmFetchingInfoFromServer.IsNewVersionAvailable(_appInfo.AppID, _appInfo.AppVersion, out string latestVersionNumber) == false)
             {
                 // Non-mendatory update available.
                 OnAppUpdateAvailable(latestVersionNumber);
@@ -336,45 +327,45 @@ namespace PassportPDF.Tools.WinForm.Controllers
         {
             if (frmMustUpdate.PromptRequiredUpdate(_view.WindowInstance))
             {
-                bool updateSuccess = DownloadLatestVersion(out string downloadedUpdatedAppFilePath);
+                HandleApplicationUpdate();
+            }
 
-                if (!updateSuccess)
+            // Exit the application if the app update hasn't run to completion.
+            _view.ExitApplication();
+        }
+
+
+        private void HandleApplicationUpdate()
+        {
+            bool downloadSuccess = DownloadLatestVersion(out string downloadedUpdatedAppFilePath);
+
+            if (downloadSuccess)
+            {
+                if (_view.PromptCancellableInformationMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_success_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage)))
                 {
-                    _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_failure_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
-                }
-                else
-                {
-                    if (_view.PromptCancellableInformationMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_success_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage)))
+                    if (!PassportPDFApplicationUpdateUtilities.StartUpdatedAppInstallation(downloadedUpdatedAppFilePath, _appInfo.AppExecutableName))
                     {
-                        PassportPDFApplicationUpdateUtilities.StartUpdatedAppInstallation(downloadedUpdatedAppFilePath, _appInfo.AppExecutableName);
+                        _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_installation_failure_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                    }
+                    else
+                    {
+                        _view.ExitApplication();
                     }
                 }
             }
-
-            _view.ExitApplication();
+            else
+            {
+                _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_failure_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+            }
         }
 
 
         private bool DownloadLatestVersion(out string downloadedUpdatedAppFilePath)
         {
-            bool downloadSuccess;
-
             // Download the latest version of the app.
             using (frmUpdateInProgress frmUpdateInProgress = new frmUpdateInProgress(_appInfo.ProductName))
             {
-                downloadedUpdatedAppFilePath = PassportPDFApplicationUpdateUtilities.DownloadAppLatestVersion(_appInfo.AppID, frmUpdateInProgress.OnUpdateDownloadCompletion, frmUpdateInProgress.OnUpdateDownloadProgress);
-
-                if (!string.IsNullOrEmpty(downloadedUpdatedAppFilePath))
-                {
-                    // The download has succesfully started
-                    downloadSuccess = frmUpdateInProgress.ShowDialog() == DialogResult.OK;
-                }
-                else
-                {
-                    downloadSuccess = false;
-                }
-
-                return downloadSuccess;
+                return frmUpdateInProgress.DownloadLatestAppVersion(_appInfo.ProductName, _appInfo.AppID, _view.WindowInstance, out downloadedUpdatedAppFilePath);
             }
         }
 

@@ -898,8 +898,8 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private void checkForLastUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool? newVersionAvailable = PassportPDFApplicationUpdateUtilities.IsNewVersionAvailable(_controller.AppInfo.AppID, _controller.AppInfo.AppVersion, out string latestVersionNumber);
-
+            bool? newVersionAvailable = frmFetchingInfoFromServer.IsNewVersionAvailable(_controller.AppInfo.AppID, _controller.AppInfo.AppVersion, out string latestVersionNumber);
+            
             if (newVersionAvailable == true)
             {
                 _controller.OnAppUpdateAvailable(latestVersionNumber);

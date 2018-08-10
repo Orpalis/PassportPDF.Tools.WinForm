@@ -26,8 +26,20 @@ namespace PassportPDF.Tools.WinForm.Views
 {
     public partial class frmUpdateInProgress : Form
     {
+        private readonly BackgroundWorker _backgroundWorker;
+
+        private string _downloadedUpdateFilePath;
+
+        private delegate void ProgressBarUpdateDelegate(int percentage);
+
+        private ProgressBarUpdateDelegate _progressBarUpdateHandler;
+
         public frmUpdateInProgress(string productName)
         {
+            _backgroundWorker = new BackgroundWorker();
+            _backgroundWorker.DoWork += BackgroundWorkerDoWork;
+            _backgroundWorker.RunWorkerCompleted += BackgroundWorkerWorkCompleted;
+            _progressBarUpdateHandler = UpdateProgressBar;
             InitializeComponent();
             LoadLocales(productName);
         }
@@ -40,13 +52,41 @@ namespace PassportPDF.Tools.WinForm.Views
         }
 
 
-        public void OnUpdateDownloadProgress(object sender, DownloadProgressChangedEventArgs e)
+        private void BackgroundWorkerDoWork(object sender, DoWorkEventArgs e)
         {
-            progressBarUpdate.Value = e.ProgressPercentage;
+            _downloadedUpdateFilePath = PassportPDFApplicationUpdateUtilities.DownloadAppLatestVersion((string)e.Argument, OnUpdateDownloadCompletion, OnUpdateDownloadProgress);
         }
 
 
-        public void OnUpdateDownloadCompletion(object sender, AsyncCompletedEventArgs e)
+        private void BackgroundWorkerWorkCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (_downloadedUpdateFilePath == null)
+            {
+                this.DialogResult = DialogResult.Abort;
+            }
+        }
+
+
+        private void UpdateProgressBar(int percentage)
+        {
+            progressBarUpdate.Value = percentage;
+        }
+
+
+        private void OnUpdateDownloadProgress(object sender, DownloadProgressChangedEventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(_progressBarUpdateHandler, e.ProgressPercentage);
+            }
+            else
+            {
+                UpdateProgressBar(e.ProgressPercentage);
+            }
+        }
+
+
+        private void OnUpdateDownloadCompletion(object sender, AsyncCompletedEventArgs e)
         {
             if (!e.Cancelled && e.Error == null)
             {
@@ -55,6 +95,19 @@ namespace PassportPDF.Tools.WinForm.Views
             else
             {
                 this.DialogResult = DialogResult.Abort;
+            }
+        }
+
+
+        public static bool DownloadLatestAppVersion(string productName, string appId, IWin32Window owner, out string downloadedUpdateFilePath)
+        {
+            using (frmUpdateInProgress frmUpdateInProgress = new frmUpdateInProgress(productName))
+            {
+                frmUpdateInProgress._backgroundWorker.RunWorkerAsync(appId);
+                frmUpdateInProgress.ShowDialog(owner);
+                downloadedUpdateFilePath = frmUpdateInProgress._downloadedUpdateFilePath;
+
+                return frmUpdateInProgress.DialogResult == DialogResult.OK;
             }
         }
     }

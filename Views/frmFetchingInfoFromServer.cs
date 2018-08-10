@@ -19,11 +19,10 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using PassportPDF.Api;
 using PassportPDF.Model;
+using PassportPDF.Tools.Framework;
 using PassportPDF.Tools.Framework.Utilities;
 using PassportPDF.Tools.Framework.Models;
-using PassportPDF.Tools.Framework;
 using PassportPDF.Tools.Framework.Errors;
 using PassportPDF.Tools.WinForm.Utilities;
 
@@ -40,6 +39,10 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private Version _appVersion;
 
+        private bool? _newVersionAvailable;
+
+        private string _latestVersionNumber;
+
         private bool? _currentAppVersionIsSupported;
 
         private Exception _apiCallException;
@@ -55,6 +58,21 @@ namespace PassportPDF.Tools.WinForm.Views
             _passportPdfRequestWorker.DoWork += BackgroundWorkerDoWork;
             _passportPdfRequestWorker.RunWorkerCompleted += BackgroundWorkerRunWorkCompleted;
             InitializeComponent();
+        }
+
+
+        public static bool? IsNewVersionAvailable(string appId, Version currentVersion, out string latestVersionNumber, IWin32Window owner = null)
+        {
+            using (frmFetchingInfoFromServer fetchWindow = new frmFetchingInfoFromServer())
+            {
+                fetchWindow._appId = appId;
+                fetchWindow._appVersion = currentVersion;
+                fetchWindow._passportPdfRequestWorker.RunWorkerAsync(BackgroundOperationType.CheckNewVersionAvailable);
+                fetchWindow.SetFormFetchingMessageAndShowUntilWorkCompletion(owner, FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_app_latest_version", FrameworkGlobals.ApplicationLanguage));
+                latestVersionNumber = fetchWindow._latestVersionNumber;
+
+                return fetchWindow._newVersionAvailable;
+            }
         }
 
 
@@ -136,15 +154,15 @@ namespace PassportPDF.Tools.WinForm.Views
                 }
                 else
                 {
-                    if (fetchWindow._getAvailableOCRLanguagesResponse.Error == null)
+                    if (fetchWindow._getAvailableOCRLanguagesResponse.error == null)
                     {
-                        availableLanguages = fetchWindow._getAvailableOCRLanguagesResponse.Value.ToArray();
+                        availableLanguages = fetchWindow._getAvailableOCRLanguagesResponse.value.ToArray();
                         return true;
                     }
                     else
                     {
                         DialogUtilities.ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages_failure", FrameworkGlobals.ApplicationLanguage),
-                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.Error.Resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.error.resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                         availableLanguages = null;
                         return false;
                     }
@@ -176,22 +194,27 @@ namespace PassportPDF.Tools.WinForm.Views
 
             try
             {
-                if (backgroundOperationType == BackgroundOperationType.CheckCurrentAppVersionIsSupported)
+                if (backgroundOperationType == BackgroundOperationType.CheckNewVersionAvailable)
+                {
+                    _newVersionAvailable = PassportPDFApplicationUpdateUtilities.IsNewVersionAvailable(_appId, _appVersion, out string latestVersion);
+                    _latestVersionNumber = latestVersion;
+                }
+                else if (backgroundOperationType == BackgroundOperationType.CheckCurrentAppVersionIsSupported)
                 {
                     _currentAppVersionIsSupported = PassportPDFApplicationUpdateUtilities.IsCurrentApplicationVersionSupported(_appId, _appVersion);
                 }
-                if (backgroundOperationType == BackgroundOperationType.FetchPassportInfo)
+                else if (backgroundOperationType == BackgroundOperationType.FetchPassportInfo)
                 {
                     PassportPDFPassport passportPdfPassport = PassportPDFRequestsUtilities.GetPassportInfo(_passportToBeFetchedId);
                     if (passportPdfPassport != null)
                     {
                         _fetchedPassportInfo = new PassportInfo
                         {
-                            PassportNumber = passportPdfPassport.PassportId,
-                            IsActive = passportPdfPassport.IsActive.Value,
-                            SubscriptionDate = passportPdfPassport.SubscriptionDate.Value,
-                            TokensUsed = passportPdfPassport.CurrentTokensUsed.Value,
-                            RemainingTokens = passportPdfPassport.RemainingTokens.Value,
+                            PassportNumber = passportPdfPassport.passportId,
+                            IsActive = passportPdfPassport.isActive.Value,
+                            SubscriptionDate = passportPdfPassport.subscriptionDate.Value,
+                            TokensUsed = passportPdfPassport.currentTokensUsed.Value,
+                            RemainingTokens = passportPdfPassport.remainingTokens.Value,
                         };
                     }
                 }
@@ -219,6 +242,7 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private enum BackgroundOperationType
         {
+            CheckNewVersionAvailable,
             CheckCurrentAppVersionIsSupported,
             FetchPassportInfo,
             FetchConfiguration,
