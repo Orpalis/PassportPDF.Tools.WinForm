@@ -154,15 +154,15 @@ namespace PassportPDF.Tools.WinForm.Views
                 }
                 else
                 {
-                    if (fetchWindow._getAvailableOCRLanguagesResponse.error == null)
+                    if (fetchWindow._getAvailableOCRLanguagesResponse.Error == null)
                     {
-                        availableLanguages = fetchWindow._getAvailableOCRLanguagesResponse.value.ToArray();
+                        availableLanguages = fetchWindow._getAvailableOCRLanguagesResponse.Value.ToArray();
                         return true;
                     }
                     else
                     {
                         DialogUtilities.ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages_failure", FrameworkGlobals.ApplicationLanguage),
-                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.error.resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.Error.resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                         availableLanguages = null;
                         return false;
                     }
@@ -210,11 +210,11 @@ namespace PassportPDF.Tools.WinForm.Views
                     {
                         _fetchedPassportInfo = new PassportInfo
                         {
-                            PassportNumber = passportPdfPassport.passportId,
-                            IsActive = passportPdfPassport.isActive.Value,
-                            SubscriptionDate = passportPdfPassport.subscriptionDate.Value,
-                            TokensUsed = passportPdfPassport.currentTokensUsed.Value,
-                            RemainingTokens = passportPdfPassport.remainingTokens.Value,
+                            PassportNumber = passportPdfPassport.PassportId,
+                            IsActive = passportPdfPassport.IsActive.Value,
+                            SubscriptionDate = passportPdfPassport.SubscriptionDate.Value,
+                            TokensUsed = passportPdfPassport.CurrentTokensUsed.Value,
+                            RemainingTokens = passportPdfPassport.RemainingTokens.Value,
                         };
                     }
                 }

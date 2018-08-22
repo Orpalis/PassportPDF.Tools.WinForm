@@ -26,9 +26,7 @@ namespace PassportPDF.Tools.WinForm.Models
         public string ProductName { get; }
 
         public string AppID { get; }
-
-        public string AppExecutableName { get; }
-
+        
         public string AppSourceCodeUrl { get; }
 
         public Version AppVersion { get; }
@@ -46,11 +44,10 @@ namespace PassportPDF.Tools.WinForm.Models
         public string[] CommandLineArguments { get; }
 
 
-        public PassportPDFDesktopAppInformation(string productName, string appID, string appExecutableName, string appSourceCodeUrl, Version appVersion, Icon appIcon, Bitmap appLogo, AcceptedInputFilesType acceptedInputFilesType, string configurationFilePath, bool autoRun, string[] commandLineArgs)
+        public PassportPDFDesktopAppInformation(string productName, string appID, string appSourceCodeUrl, Version appVersion, Icon appIcon, Bitmap appLogo, AcceptedInputFilesType acceptedInputFilesType, string configurationFilePath, bool autoRun, string[] commandLineArgs)
         {
             ProductName = productName;
             AppID = appID;
-            AppExecutableName = appExecutableName;
             AppSourceCodeUrl = appSourceCodeUrl;
             AppVersion = appVersion;
             AppIcon = appIcon;

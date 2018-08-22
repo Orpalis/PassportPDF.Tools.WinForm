@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Windows.Forms;
 using System.Threading;
 using System.Globalization;
 using PassportPDF.Tools.Framework;
@@ -29,7 +28,6 @@ using PassportPDF.Tools.Framework.Business;
 using PassportPDF.Tools.Framework.Configuration;
 using PassportPDF.Tools.WinForm.Models;
 using PassportPDF.Tools.WinForm.Views;
-using PassportPDF.Tools.WinForm.Utilities;
 
 namespace PassportPDF.Tools.WinForm.Controllers
 {
@@ -315,7 +313,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
         private void CheckForApplicationUpdate()
         {
-            if (frmFetchingInfoFromServer.IsNewVersionAvailable(_appInfo.AppID, _appInfo.AppVersion, out string latestVersionNumber) == false)
+            if (frmFetchingInfoFromServer.IsNewVersionAvailable(_appInfo.AppID, _appInfo.AppVersion, out string latestVersionNumber, _view.WindowInstance) == true)
             {
                 // Non-mendatory update available.
                 OnAppUpdateAvailable(latestVersionNumber);
@@ -343,7 +341,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
             {
                 if (_view.PromptCancellableInformationMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_download_success_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_information", FrameworkGlobals.ApplicationLanguage)))
                 {
-                    if (!PassportPDFApplicationUpdateUtilities.StartUpdatedAppInstallation(downloadedUpdatedAppFilePath, _appInfo.AppExecutableName))
+                    if (!PassportPDFApplicationUpdateUtilities.StartUpdatedAppInstallation(downloadedUpdatedAppFilePath))
                     {
                         _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("app_update_installation_failure_message", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                     }
