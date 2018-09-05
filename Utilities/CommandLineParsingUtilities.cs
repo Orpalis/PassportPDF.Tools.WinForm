@@ -26,7 +26,7 @@ namespace PassportPDF.Tools.WinForm.Utilities
 {
     public static class CommandLineParsingUtilities
     {
-        public static void ParseCommandLineArgs(string[] args, ApplicationConfiguration applicationConfiguration, PDFReduceActionConfiguration reduceActionConfiguration = null, PDFOCRActionConfiguration ocrActionConfiguration = null, ImageSaveAsPDFActionConfiguration imageSaveAsPdfActionConfiguration = null)
+        public static void ParseCommandLineArgs(string[] args, ApplicationConfiguration applicationConfiguration, PDFReduceActionConfiguration reduceActionConfiguration = null, PDFOCRActionConfiguration ocrActionConfiguration = null, ImageSaveAsPDFMRCActionConfiguration imageSaveAsPdfMrcActionConfiguration = null)
         {
             for (int index = 0; index < args.Length; index++)
             {
@@ -40,9 +40,9 @@ namespace PassportPDF.Tools.WinForm.Utilities
                     {
                         ParseOCRActionConfigurationArgument(args, index, ocrActionConfiguration);
                     }
-                    if (imageSaveAsPdfActionConfiguration != null)
+                    if (imageSaveAsPdfMrcActionConfiguration != null)
                     {
-                        ParseSaveImageAsPdfConfigurationArgument(args, index, imageSaveAsPdfActionConfiguration);
+                        ParseSaveImageAsPdfMrcConfigurationArgument(args, index, imageSaveAsPdfMrcActionConfiguration);
                     }
                 }
             }
@@ -252,7 +252,7 @@ namespace PassportPDF.Tools.WinForm.Utilities
         }
 
 
-        private static void ParseSaveImageAsPdfConfigurationArgument(string[] args, int index, ImageSaveAsPDFActionConfiguration imageSaveAsPdfActionConfiguration)
+        private static void ParseSaveImageAsPdfMrcConfigurationArgument(string[] args, int index, ImageSaveAsPDFMRCActionConfiguration imageSaveAsPdfMrcActionConfiguration)
         {
             //todo: implement
         }
