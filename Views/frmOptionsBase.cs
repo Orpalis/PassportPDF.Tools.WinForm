@@ -97,7 +97,9 @@ namespace PassportPDF.Tools.WinForm.Views
 
         protected virtual void ResetDefaultConfiguration()
         {
+            string applicationLanguage = FrameworkGlobals.ApplicationConfiguration.Language;
             FrameworkGlobals.ApplicationConfiguration = ConfigurationManager.ResetDefaultApplicationConfiguration();
+            FrameworkGlobals.ApplicationConfiguration.Language = applicationLanguage; // Don't reset application language.
         }
 
 
