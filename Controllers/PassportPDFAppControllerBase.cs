@@ -481,7 +481,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
             }
             catch (Exception)
             {
-                _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailure", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailureTitle", FrameworkGlobals.ApplicationLanguage));
+                _view.ShowErrorMessage(FrameworkGlobals.MessagesLocalizer.GetString("readApplicationConfigurationFailure", FrameworkGlobals.ApplicationLanguage), FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailureTitle", FrameworkGlobals.ApplicationLanguage));
                 FrameworkGlobals.ApplicationConfiguration = ConfigurationManager.ResetDefaultApplicationConfiguration();
             }
 
