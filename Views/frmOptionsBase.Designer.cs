@@ -55,16 +55,18 @@ namespace PassportPDF.Tools.WinForm.Views
             this.chkAutomaticallycheckForUpdates = new System.Windows.Forms.CheckBox();
             this.chkWarnSameInputOutputFolder = new System.Windows.Forms.CheckBox();
             this.chkSubfolders = new System.Windows.Forms.CheckBox();
+            this.panelGeneral = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabLogs = new System.Windows.Forms.TabPage();
             this.chkTimestampLogs = new System.Windows.Forms.CheckBox();
             this.chkExportLogs = new System.Windows.Forms.CheckBox();
-            this.btSelectLogFile = new System.Windows.Forms.Button();
             this.txtLogFile = new System.Windows.Forms.TextBox();
             this.lbLogsFile = new System.Windows.Forms.Label();
             this.selectLogFileFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxBanner = new System.Windows.Forms.PictureBox();
+            this.btSelectLogFile = new System.Windows.Forms.Button();
+            this.panelLogs = new System.Windows.Forms.Panel();
             this.tabGeneral.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabLogs.SuspendLayout();
@@ -115,6 +117,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.tabGeneral.Controls.Add(this.chkAutomaticallycheckForUpdates);
             this.tabGeneral.Controls.Add(this.chkWarnSameInputOutputFolder);
             this.tabGeneral.Controls.Add(this.chkSubfolders);
+            this.tabGeneral.Controls.Add(this.panelGeneral);
             this.tabGeneral.Location = new System.Drawing.Point(4, 22);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
@@ -154,6 +157,15 @@ namespace PassportPDF.Tools.WinForm.Views
             this.chkSubfolders.Text = "Process subfolders";
             this.chkSubfolders.UseVisualStyleBackColor = true;
             // 
+            // panelGeneral
+            // 
+            this.panelGeneral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGeneral.Location = new System.Drawing.Point(3, 3);
+            this.panelGeneral.Name = "panelGeneral";
+            this.panelGeneral.Size = new System.Drawing.Size(479, 211);
+            this.panelGeneral.TabIndex = 17;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabGeneral);
@@ -166,11 +178,12 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             // tabLogs
             // 
+            this.tabLogs.Controls.Add(this.btSelectLogFile);
             this.tabLogs.Controls.Add(this.chkTimestampLogs);
             this.tabLogs.Controls.Add(this.chkExportLogs);
-            this.tabLogs.Controls.Add(this.btSelectLogFile);
             this.tabLogs.Controls.Add(this.txtLogFile);
             this.tabLogs.Controls.Add(this.lbLogsFile);
+            this.tabLogs.Controls.Add(this.panelLogs);
             this.tabLogs.Location = new System.Drawing.Point(4, 22);
             this.tabLogs.Name = "tabLogs";
             this.tabLogs.Padding = new System.Windows.Forms.Padding(3);
@@ -198,17 +211,6 @@ namespace PassportPDF.Tools.WinForm.Views
             this.chkExportLogs.TabIndex = 24;
             this.chkExportLogs.Text = "Export the log messages";
             this.chkExportLogs.UseVisualStyleBackColor = true;
-            // 
-            // btSelectLogFile
-            // 
-            this.btSelectLogFile.BackgroundImage = global::PassportPDF.Tools.WinForm.Properties.Resources.add_file;
-            this.btSelectLogFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btSelectLogFile.Location = new System.Drawing.Point(277, 78);
-            this.btSelectLogFile.Name = "btSelectLogFile";
-            this.btSelectLogFile.Size = new System.Drawing.Size(24, 24);
-            this.btSelectLogFile.TabIndex = 23;
-            this.btSelectLogFile.UseVisualStyleBackColor = true;
-            this.btSelectLogFile.Click += new System.EventHandler(this.btSelectLogFile_Click);
             // 
             // txtLogFile
             // 
@@ -252,6 +254,26 @@ namespace PassportPDF.Tools.WinForm.Views
             this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBanner.TabIndex = 4;
             this.pictureBoxBanner.TabStop = false;
+            // 
+            // btSelectLogFile
+            // 
+            this.btSelectLogFile.BackgroundImage = global::PassportPDF.Tools.WinForm.Properties.Resources.add_file;
+            this.btSelectLogFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btSelectLogFile.Location = new System.Drawing.Point(277, 78);
+            this.btSelectLogFile.Name = "btSelectLogFile";
+            this.btSelectLogFile.Size = new System.Drawing.Size(24, 24);
+            this.btSelectLogFile.TabIndex = 23;
+            this.btSelectLogFile.UseVisualStyleBackColor = true;
+            this.btSelectLogFile.Click += new System.EventHandler(this.btSelectLogFile_Click);
+            // 
+            // panelLogs
+            // 
+            this.panelLogs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLogs.Location = new System.Drawing.Point(3, 3);
+            this.panelLogs.Name = "panelLogs";
+            this.panelLogs.Size = new System.Drawing.Size(479, 211);
+            this.panelLogs.TabIndex = 27;
             // 
             // frmOptionsBase
             // 
@@ -302,5 +324,7 @@ namespace PassportPDF.Tools.WinForm.Views
         private System.Windows.Forms.CheckBox chkExportLogs;
         private System.Windows.Forms.Label lbLogsFile;
         private System.Windows.Forms.CheckBox chkTimestampLogs;
+        private System.Windows.Forms.Panel panelGeneral;
+        private System.Windows.Forms.Panel panelLogs;
     }
 }
