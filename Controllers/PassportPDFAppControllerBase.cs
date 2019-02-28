@@ -252,7 +252,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
             _view.NotifyOperationWarning(warningMessage);
 
-            if (!string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath) && FrameworkGlobals.ApplicationConfiguration.ExportLogs)
+            if (FrameworkGlobals.ApplicationConfiguration.ExportLogs && !string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath))
             {
                 // Update logs file
                 FrameworkGlobals.LogsManager.LogMessage(warningMessage);
@@ -273,7 +273,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
             _view.NotifyOperationError(errorMessage);
 
-            if (!string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath) && FrameworkGlobals.ApplicationConfiguration.ExportLogs)
+            if (FrameworkGlobals.ApplicationConfiguration.ExportLogs && !string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath))
             {
                 // Update logs file
                 FrameworkGlobals.LogsManager.LogMessage(errorMessage);
