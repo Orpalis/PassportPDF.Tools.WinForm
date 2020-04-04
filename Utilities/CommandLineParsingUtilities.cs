@@ -26,7 +26,7 @@ namespace PassportPDF.Tools.WinForm.Utilities
 {
     public static class CommandLineParsingUtilities
     {
-        public static void ParseCommandLineArgs(string[] args, ApplicationConfiguration applicationConfiguration, PDFReduceActionConfiguration reduceActionConfiguration = null, PDFOCRActionConfiguration ocrActionConfiguration = null, ImageSaveAsPDFMRCActionConfiguration imageSaveAsPdfMrcActionConfiguration = null)
+        public static void ParseCommandLineArgs(string[] args, ApplicationConfiguration applicationConfiguration, PDFReduceActionConfiguration reduceActionConfiguration = null, PDFOCRActionConfiguration ocrActionConfiguration = null, ImageSaveAsPDFMRCActionConfiguration imageSaveAsPdfMrcActionConfiguration = null, DocumentLoadAsPDFActionConfiguration loadAsPdfActionConfiguration = null)
         {
             for (int index = 0; index < args.Length; index++)
             {
@@ -43,6 +43,10 @@ namespace PassportPDF.Tools.WinForm.Utilities
                     if (imageSaveAsPdfMrcActionConfiguration != null)
                     {
                         ParseSaveImageAsPdfMrcConfigurationArgument(args, index, imageSaveAsPdfMrcActionConfiguration);
+                    }
+                    if (loadAsPdfActionConfiguration != null )
+                    {
+                        ParseDocumentLoadAsPdfConfigurationArgument(args, index, loadAsPdfActionConfiguration);
                     }
                 }
             }
@@ -165,9 +169,9 @@ namespace PassportPDF.Tools.WinForm.Utilities
                         int quality;
                         if (int.TryParse(args[index + 1], out quality))
                         {
-                            if (quality >= (int)PDFReduceParameters.ImageQualityEnum.ImageQualityLow && quality <= (int)PDFReduceParameters.ImageQualityEnum.ImageQualityVeryHigh)
+                            if (quality >= (int)ImageQuality.ImageQualityLow && quality <= (int)ImageQuality.ImageQualityVeryHigh)
                             {
-                                reduceActionConfiguration.ImageQuality = (PDFReduceParameters.ImageQualityEnum)quality;
+                                reduceActionConfiguration.ImageQuality = (ImageQuality)quality;
                             }
                         }
                     }
@@ -253,6 +257,12 @@ namespace PassportPDF.Tools.WinForm.Utilities
 
 
         private static void ParseSaveImageAsPdfMrcConfigurationArgument(string[] args, int index, ImageSaveAsPDFMRCActionConfiguration imageSaveAsPdfMrcActionConfiguration)
+        {
+            //todo: implement
+        }
+
+
+        private static void ParseDocumentLoadAsPdfConfigurationArgument(string[] args, int index, DocumentLoadAsPDFActionConfiguration loadAsPdfActionConfiguration)
         {
             //todo: implement
         }

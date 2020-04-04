@@ -164,11 +164,10 @@ namespace PassportPDF.Tools.WinForm.Views
             this.cboMaxProcesses.Name = "cboMaxProcesses";
             this.cboMaxProcesses.Size = new System.Drawing.Size(129, 21);
             this.cboMaxProcesses.TabIndex = 8;
-            this.cboMaxProcesses.SelectedIndexChanged += cboMaxProcesses_SelectedIndexChanged;
             // 
             // prgProgress
             // 
-            this.prgProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.prgProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.prgProgress.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.prgProgress.Location = new System.Drawing.Point(4, 359);
@@ -187,7 +186,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.TabProcessLogs.Location = new System.Drawing.Point(4, 22);
             this.TabProcessLogs.Name = "TabProcessLogs";
             this.TabProcessLogs.Padding = new System.Windows.Forms.Padding(3);
-            this.TabProcessLogs.Size = new System.Drawing.Size(483, 186);
+            this.TabProcessLogs.Size = new System.Drawing.Size(473, 186);
             this.TabProcessLogs.TabIndex = 2;
             this.TabProcessLogs.Text = "Success";
             this.TabProcessLogs.UseVisualStyleBackColor = true;
@@ -201,7 +200,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.lstProcessLog.ItemHeight = 14;
             this.lstProcessLog.Location = new System.Drawing.Point(3, 3);
             this.lstProcessLog.Name = "lstProcessLog";
-            this.lstProcessLog.Size = new System.Drawing.Size(477, 180);
+            this.lstProcessLog.Size = new System.Drawing.Size(467, 180);
             this.lstProcessLog.TabIndex = 1;
             // 
             // TabWarnings
@@ -210,7 +209,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.TabWarnings.Location = new System.Drawing.Point(4, 22);
             this.TabWarnings.Name = "TabWarnings";
             this.TabWarnings.Padding = new System.Windows.Forms.Padding(3);
-            this.TabWarnings.Size = new System.Drawing.Size(483, 186);
+            this.TabWarnings.Size = new System.Drawing.Size(473, 186);
             this.TabWarnings.TabIndex = 1;
             this.TabWarnings.Text = "Warnings";
             this.TabWarnings.UseVisualStyleBackColor = true;
@@ -224,7 +223,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.lstWarnLog.ItemHeight = 14;
             this.lstWarnLog.Location = new System.Drawing.Point(3, 3);
             this.lstWarnLog.Name = "lstWarnLog";
-            this.lstWarnLog.Size = new System.Drawing.Size(477, 180);
+            this.lstWarnLog.Size = new System.Drawing.Size(467, 180);
             this.lstWarnLog.TabIndex = 0;
             // 
             // TabStatus
@@ -251,8 +250,8 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             // TabControl1
             // 
-            this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControl1.Controls.Add(this.TabStatus);
             this.TabControl1.Controls.Add(this.TabWarnings);
@@ -270,7 +269,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.tabErrors.Location = new System.Drawing.Point(4, 22);
             this.tabErrors.Name = "tabErrors";
             this.tabErrors.Padding = new System.Windows.Forms.Padding(3);
-            this.tabErrors.Size = new System.Drawing.Size(483, 186);
+            this.tabErrors.Size = new System.Drawing.Size(473, 186);
             this.tabErrors.TabIndex = 3;
             this.tabErrors.Text = "Errors";
             this.tabErrors.UseVisualStyleBackColor = true;
@@ -284,7 +283,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.lstErrLog.ItemHeight = 14;
             this.lstErrLog.Location = new System.Drawing.Point(3, 3);
             this.lstErrLog.Name = "lstErrLog";
-            this.lstErrLog.Size = new System.Drawing.Size(477, 180);
+            this.lstErrLog.Size = new System.Drawing.Size(467, 180);
             this.lstErrLog.TabIndex = 1;
             // 
             // cmdRun
@@ -324,7 +323,7 @@ namespace PassportPDF.Tools.WinForm.Views
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -389,7 +388,7 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             // lbStatus
             // 
-            this.lbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.lbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbStatus.AutoSize = true;
             this.lbStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -454,7 +453,6 @@ namespace PassportPDF.Tools.WinForm.Views
             // frmMainBase
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 388);
             this.Controls.Add(this.cmdBrowseFolders);

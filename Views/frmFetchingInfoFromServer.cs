@@ -162,7 +162,7 @@ namespace PassportPDF.Tools.WinForm.Views
                     else
                     {
                         DialogUtilities.ShowErrorMessage(LogMessagesUtils.ReplaceMessageSequencesAndReferences(FrameworkGlobals.MessagesLocalizer.GetString("message_fetching_ocr_languages_failure", FrameworkGlobals.ApplicationLanguage),
-                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.Error.resultcode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
+                            additionalMessage: PassportPDFErrorUtilities.GetMessageFromResultCode(fetchWindow._getAvailableOCRLanguagesResponse.Error.ResultCode)), FrameworkGlobals.MessagesLocalizer.GetString("caption_error", FrameworkGlobals.ApplicationLanguage));
                         availableLanguages = null;
                         return false;
                     }
@@ -211,10 +211,10 @@ namespace PassportPDF.Tools.WinForm.Views
                         _fetchedPassportInfo = new PassportInfo
                         {
                             PassportNumber = passportPdfPassport.PassportId,
-                            IsActive = passportPdfPassport.IsActive.Value,
-                            SubscriptionDate = passportPdfPassport.SubscriptionDate.Value,
-                            TokensUsed = passportPdfPassport.CurrentTokensUsed.Value,
-                            RemainingTokens = passportPdfPassport.RemainingTokens.Value,
+                            IsActive = passportPdfPassport.IsActive,
+                            SubscriptionDate = passportPdfPassport.SubscriptionDate,
+                            TokensUsed = passportPdfPassport.CurrentTokensUsed,
+                            RemainingTokens = passportPdfPassport.RemainingTokens,
                         };
                     }
                 }

@@ -24,7 +24,7 @@ namespace PassportPDF.Tools.WinForm.Models
 
         public int SuccesfullyProcessedFileCount { get; set; }
 
-        public int UnsuccesfullyProcessedFileCount { get; set; }
+        public int UnsuccessfullyProcessedFileCount { get; set; }
 
         public double TotalInputSize { get; set; }
 

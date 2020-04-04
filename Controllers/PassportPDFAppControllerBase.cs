@@ -150,6 +150,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
         public void OnDragAndDrop(string[] data)
         {
+            _view.SourcePath = string.Join("|", data);
             HandleFileOperationsPreperationResult(FileToProcessCollector.ProceedToFileCollection(data, _view.DestinationFolder, _supportedInputFileExtensions, false));
         }
 
@@ -262,7 +263,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
 
         private void OnFileOperationError(string errorMessage)
         {
-            _operationsStats.UnsuccesfullyProcessedFileCount += 1;
+            _operationsStats.UnsuccessfullyProcessedFileCount += 1;
             _operationsStats.ProcessedFileCount += 1;
             _view.ProcessedFileCount = _operationsStats.ProcessedFileCount;
 
@@ -462,7 +463,7 @@ namespace PassportPDF.Tools.WinForm.Controllers
         {
             _operationsStats.ProcessedFileCount = 0;
             _operationsStats.SuccesfullyProcessedFileCount = 0;
-            _operationsStats.UnsuccesfullyProcessedFileCount = 0;
+            _operationsStats.UnsuccessfullyProcessedFileCount = 0;
             _operationsStats.TotalInputSize = 0;
             _operationsStats.TotalOutputSize = 0;
             _operationsStats.ReductionRatio = 0;
