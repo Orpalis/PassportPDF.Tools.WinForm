@@ -8,7 +8,7 @@
     <RootNamespace>PassportPDF.Tools.WinForm</RootNamespace>
     <ApplicationIcon />
     <StartupObject />
-    <Version>1.0.53</Version>
+    <Version>1.0.57</Version>
     <Copyright>Copyright ©  2018 - 2020 ORPALIS - http://www.orpalis.com</Copyright>
     <Company>ORPALIS</Company>
     <Authors>ORPALIS</Authors>
@@ -16,10 +16,16 @@
     <Description>Helper library to build WinForm productivity applications based on the PassportPDF API easily.</Description>
     <PackageProjectUrl>http://www.passportpdf.com</PackageProjectUrl>
     <PackageIconUrl>http://www.orpalis.com/images/ORPALIS/logos/PP-symbol-128.png</PackageIconUrl>
+    <AssemblyVersion>1.0.57.0</AssemblyVersion>
+    <FileVersion>1.0.57.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>D:\gdpicture\nuget</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\gdpicture\dev\DotNet\PassportPDF.Tools.WinForm\PassportPDF.Tools.WinForm.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -42,8 +48,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PassportPDF" Version="1.0.68" />
-    <PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.60" />
+    <PackageReference Include="PassportPDF" Version="1.0.73" />
+    <PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.63" />
   </ItemGroup>
 
   <ItemGroup>

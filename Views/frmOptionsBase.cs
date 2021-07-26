@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using PassportPDF.Tools.Framework;
 using PassportPDF.Tools.Framework.Configuration;
+using PassportPDF.Tools.WinForm.Properties;
 
 namespace PassportPDF.Tools.WinForm.Views
 {
@@ -29,12 +30,13 @@ namespace PassportPDF.Tools.WinForm.Views
         private frmOptionsBase()
         {
             InitializeComponent();
+            btSelectLogFile.Image = Resources.edit;
         }
 
 
         public frmOptionsBase(Image bannerImage) : this()
         {
-            this.pictureBoxBanner.Image = bannerImage;
+            pictureBoxBanner.Image = bannerImage;
         }
 
 

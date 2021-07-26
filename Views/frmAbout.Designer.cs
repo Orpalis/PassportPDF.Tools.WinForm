@@ -105,7 +105,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.lbCopyright.Name = "lbCopyright";
             this.lbCopyright.Size = new System.Drawing.Size(172, 13);
             this.lbCopyright.TabIndex = 16;
-            this.lbCopyright.Text = "Copyright © ORPALIS 2017 - 2018";
+            this.lbCopyright.Text = "Copyright © ORPALIS 2017 - 2020";
             // 
             // picProductLogo
             // 

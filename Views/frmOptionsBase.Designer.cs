@@ -58,15 +58,15 @@ namespace PassportPDF.Tools.WinForm.Views
             this.panelGeneral = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabLogs = new System.Windows.Forms.TabPage();
+            this.btSelectLogFile = new System.Windows.Forms.Button();
             this.chkTimestampLogs = new System.Windows.Forms.CheckBox();
             this.chkExportLogs = new System.Windows.Forms.CheckBox();
             this.txtLogFile = new System.Windows.Forms.TextBox();
             this.lbLogsFile = new System.Windows.Forms.Label();
+            this.panelLogs = new System.Windows.Forms.Panel();
             this.selectLogFileFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxBanner = new System.Windows.Forms.PictureBox();
-            this.btSelectLogFile = new System.Windows.Forms.Button();
-            this.panelLogs = new System.Windows.Forms.Panel();
             this.tabGeneral.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabLogs.SuspendLayout();
@@ -77,9 +77,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // btReset
             // 
             this.btReset.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btReset.Location = new System.Drawing.Point(2, 310);
+            this.btReset.Location = new System.Drawing.Point(4, 358);
+            this.btReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(103, 31);
+            this.btReset.Size = new System.Drawing.Size(120, 36);
             this.btReset.TabIndex = 8;
             this.btReset.Text = "Reset to default";
             this.btReset.UseVisualStyleBackColor = true;
@@ -88,9 +89,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // btApply
             // 
             this.btApply.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btApply.Location = new System.Drawing.Point(282, 310);
+            this.btApply.Location = new System.Drawing.Point(329, 358);
+            this.btApply.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btApply.Name = "btApply";
-            this.btApply.Size = new System.Drawing.Size(103, 31);
+            this.btApply.Size = new System.Drawing.Size(120, 36);
             this.btApply.TabIndex = 7;
             this.btApply.Text = "Apply";
             this.btApply.UseVisualStyleBackColor = true;
@@ -104,9 +106,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // btCancel
             // 
             this.btCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btCancel.Location = new System.Drawing.Point(391, 310);
+            this.btCancel.Location = new System.Drawing.Point(456, 358);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(103, 31);
+            this.btCancel.Size = new System.Drawing.Size(120, 36);
             this.btCancel.TabIndex = 10;
             this.btCancel.Text = "Cancel";
             this.btCancel.UseVisualStyleBackColor = true;
@@ -118,10 +121,11 @@ namespace PassportPDF.Tools.WinForm.Views
             this.tabGeneral.Controls.Add(this.chkWarnSameInputOutputFolder);
             this.tabGeneral.Controls.Add(this.chkSubfolders);
             this.tabGeneral.Controls.Add(this.panelGeneral);
-            this.tabGeneral.Location = new System.Drawing.Point(4, 22);
+            this.tabGeneral.Location = new System.Drawing.Point(4, 24);
+            this.tabGeneral.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabGeneral.Name = "tabGeneral";
-            this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeneral.Size = new System.Drawing.Size(485, 217);
+            this.tabGeneral.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabGeneral.Size = new System.Drawing.Size(567, 252);
             this.tabGeneral.TabIndex = 1;
             this.tabGeneral.Text = "General";
             this.tabGeneral.UseVisualStyleBackColor = true;
@@ -130,9 +134,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             this.chkAutomaticallycheckForUpdates.AutoSize = true;
             this.chkAutomaticallycheckForUpdates.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkAutomaticallycheckForUpdates.Location = new System.Drawing.Point(15, 61);
+            this.chkAutomaticallycheckForUpdates.Location = new System.Drawing.Point(18, 70);
+            this.chkAutomaticallycheckForUpdates.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chkAutomaticallycheckForUpdates.Name = "chkAutomaticallycheckForUpdates";
-            this.chkAutomaticallycheckForUpdates.Size = new System.Drawing.Size(172, 17);
+            this.chkAutomaticallycheckForUpdates.Size = new System.Drawing.Size(192, 19);
             this.chkAutomaticallycheckForUpdates.TabIndex = 16;
             this.chkAutomaticallycheckForUpdates.Text = "Automatically check for update";
             this.chkAutomaticallycheckForUpdates.UseVisualStyleBackColor = true;
@@ -140,9 +145,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // chkWarnSameInputOutputFolder
             // 
             this.chkWarnSameInputOutputFolder.AutoSize = true;
-            this.chkWarnSameInputOutputFolder.Location = new System.Drawing.Point(15, 38);
+            this.chkWarnSameInputOutputFolder.Location = new System.Drawing.Point(18, 44);
+            this.chkWarnSameInputOutputFolder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chkWarnSameInputOutputFolder.Name = "chkWarnSameInputOutputFolder";
-            this.chkWarnSameInputOutputFolder.Size = new System.Drawing.Size(302, 17);
+            this.chkWarnSameInputOutputFolder.Size = new System.Drawing.Size(334, 19);
             this.chkWarnSameInputOutputFolder.TabIndex = 11;
             this.chkWarnSameInputOutputFolder.Text = "Warn when source and destination directories are identical";
             this.chkWarnSameInputOutputFolder.UseVisualStyleBackColor = true;
@@ -150,9 +156,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // chkSubfolders
             // 
             this.chkSubfolders.AutoSize = true;
-            this.chkSubfolders.Location = new System.Drawing.Point(15, 15);
+            this.chkSubfolders.Location = new System.Drawing.Point(18, 17);
+            this.chkSubfolders.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chkSubfolders.Name = "chkSubfolders";
-            this.chkSubfolders.Size = new System.Drawing.Size(115, 17);
+            this.chkSubfolders.Size = new System.Drawing.Size(124, 19);
             this.chkSubfolders.TabIndex = 3;
             this.chkSubfolders.Text = "Process subfolders";
             this.chkSubfolders.UseVisualStyleBackColor = true;
@@ -161,19 +168,21 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             this.panelGeneral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelGeneral.Location = new System.Drawing.Point(3, 3);
+            this.panelGeneral.Location = new System.Drawing.Point(4, 3);
+            this.panelGeneral.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(479, 211);
+            this.panelGeneral.Size = new System.Drawing.Size(559, 246);
             this.panelGeneral.TabIndex = 17;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabGeneral);
             this.tabControl1.Controls.Add(this.tabLogs);
-            this.tabControl1.Location = new System.Drawing.Point(3, 60);
+            this.tabControl1.Location = new System.Drawing.Point(4, 69);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(493, 243);
+            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.Size = new System.Drawing.Size(575, 280);
             this.tabControl1.TabIndex = 3;
             // 
             // tabLogs
@@ -184,20 +193,32 @@ namespace PassportPDF.Tools.WinForm.Views
             this.tabLogs.Controls.Add(this.txtLogFile);
             this.tabLogs.Controls.Add(this.lbLogsFile);
             this.tabLogs.Controls.Add(this.panelLogs);
-            this.tabLogs.Location = new System.Drawing.Point(4, 22);
+            this.tabLogs.Location = new System.Drawing.Point(4, 24);
+            this.tabLogs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabLogs.Name = "tabLogs";
-            this.tabLogs.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLogs.Size = new System.Drawing.Size(485, 217);
+            this.tabLogs.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabLogs.Size = new System.Drawing.Size(567, 252);
             this.tabLogs.TabIndex = 2;
             this.tabLogs.Text = "Logs";
             this.tabLogs.UseVisualStyleBackColor = true;
             // 
+            // btSelectLogFile
+            // 
+            this.btSelectLogFile.Location = new System.Drawing.Point(323, 90);
+            this.btSelectLogFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btSelectLogFile.Name = "btSelectLogFile";
+            this.btSelectLogFile.Size = new System.Drawing.Size(24, 24);
+            this.btSelectLogFile.TabIndex = 23;
+            this.btSelectLogFile.UseVisualStyleBackColor = true;
+            this.btSelectLogFile.Click += new System.EventHandler(this.btSelectLogFile_Click);
+            // 
             // chkTimestampLogs
             // 
             this.chkTimestampLogs.AutoSize = true;
-            this.chkTimestampLogs.Location = new System.Drawing.Point(15, 15);
+            this.chkTimestampLogs.Location = new System.Drawing.Point(18, 17);
+            this.chkTimestampLogs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chkTimestampLogs.Name = "chkTimestampLogs";
-            this.chkTimestampLogs.Size = new System.Drawing.Size(144, 17);
+            this.chkTimestampLogs.Size = new System.Drawing.Size(159, 19);
             this.chkTimestampLogs.TabIndex = 26;
             this.chkTimestampLogs.Text = "Timestamp log messages";
             this.chkTimestampLogs.UseVisualStyleBackColor = true;
@@ -205,19 +226,21 @@ namespace PassportPDF.Tools.WinForm.Views
             // chkExportLogs
             // 
             this.chkExportLogs.AutoSize = true;
-            this.chkExportLogs.Location = new System.Drawing.Point(15, 38);
+            this.chkExportLogs.Location = new System.Drawing.Point(18, 44);
+            this.chkExportLogs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chkExportLogs.Name = "chkExportLogs";
-            this.chkExportLogs.Size = new System.Drawing.Size(141, 17);
+            this.chkExportLogs.Size = new System.Drawing.Size(154, 19);
             this.chkExportLogs.TabIndex = 24;
             this.chkExportLogs.Text = "Export the log messages";
             this.chkExportLogs.UseVisualStyleBackColor = true;
             // 
             // txtLogFile
             // 
-            this.txtLogFile.Location = new System.Drawing.Point(15, 79);
+            this.txtLogFile.Location = new System.Drawing.Point(18, 91);
+            this.txtLogFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtLogFile.Name = "txtLogFile";
             this.txtLogFile.ReadOnly = true;
-            this.txtLogFile.Size = new System.Drawing.Size(259, 20);
+            this.txtLogFile.Size = new System.Drawing.Size(302, 23);
             this.txtLogFile.TabIndex = 22;
             this.txtLogFile.Text = "(click the button to select a file)";
             this.txtLogFile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -225,11 +248,22 @@ namespace PassportPDF.Tools.WinForm.Views
             // lbLogsFile
             // 
             this.lbLogsFile.AutoSize = true;
-            this.lbLogsFile.Location = new System.Drawing.Point(12, 61);
+            this.lbLogsFile.Location = new System.Drawing.Point(14, 70);
+            this.lbLogsFile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLogsFile.Name = "lbLogsFile";
-            this.lbLogsFile.Size = new System.Drawing.Size(49, 13);
+            this.lbLogsFile.Size = new System.Drawing.Size(54, 15);
             this.lbLogsFile.TabIndex = 25;
             this.lbLogsFile.Text = "Logs file:";
+            // 
+            // panelLogs
+            // 
+            this.panelLogs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLogs.Location = new System.Drawing.Point(4, 3);
+            this.panelLogs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelLogs.Name = "panelLogs";
+            this.panelLogs.Size = new System.Drawing.Size(559, 246);
+            this.panelLogs.TabIndex = 27;
             // 
             // selectLogFileFileDialog
             // 
@@ -239,9 +273,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gray;
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 306);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 353);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(490, 1);
+            this.pictureBox2.Size = new System.Drawing.Size(572, 1);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
@@ -249,37 +284,18 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             this.pictureBoxBanner.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBoxBanner.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxBanner.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBoxBanner.Name = "pictureBoxBanner";
-            this.pictureBoxBanner.Size = new System.Drawing.Size(499, 58);
+            this.pictureBoxBanner.Size = new System.Drawing.Size(579, 63);
             this.pictureBoxBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBanner.TabIndex = 4;
             this.pictureBoxBanner.TabStop = false;
             // 
-            // btSelectLogFile
-            // 
-            this.btSelectLogFile.BackgroundImage = global::PassportPDF.Tools.WinForm.Properties.Resources.add_file;
-            this.btSelectLogFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btSelectLogFile.Location = new System.Drawing.Point(277, 78);
-            this.btSelectLogFile.Name = "btSelectLogFile";
-            this.btSelectLogFile.Size = new System.Drawing.Size(24, 24);
-            this.btSelectLogFile.TabIndex = 23;
-            this.btSelectLogFile.UseVisualStyleBackColor = true;
-            this.btSelectLogFile.Click += new System.EventHandler(this.btSelectLogFile_Click);
-            // 
-            // panelLogs
-            // 
-            this.panelLogs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLogs.Location = new System.Drawing.Point(3, 3);
-            this.panelLogs.Name = "panelLogs";
-            this.panelLogs.Size = new System.Drawing.Size(479, 211);
-            this.panelLogs.TabIndex = 27;
-            // 
             // frmOptionsBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 344);
+            this.ClientSize = new System.Drawing.Size(580, 397);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btReset);
@@ -288,7 +304,7 @@ namespace PassportPDF.Tools.WinForm.Views
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmOptionsBase";

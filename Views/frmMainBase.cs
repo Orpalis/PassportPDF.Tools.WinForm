@@ -49,6 +49,10 @@ namespace PassportPDF.Tools.WinForm.Views
         protected frmMainBase()
         {
             InitializeComponent();
+
+            cmdBrowseFolders.Image = Properties.Resources.add_folder;
+            cmdBrowseFiles.Image = Properties.Resources.add_file;
+
             // Associate each event handler to its appropriate delegate, so that they can be accessed from different threads
             _updateWindowTitle = UpdateWindowTitle;
             _operationProgressEventHandler = UpdateThreadProgressLogs;
