@@ -477,9 +477,7 @@ namespace PassportPDF.Tools.WinForm.Views
         {
             aboutToolStripMenuItem.Text = Globals.LabelsLocalizer.GetString("label_aboutToolStripMenuItem", FrameworkGlobals.ApplicationLanguage);
             cmdRun.Text = Globals.LabelsLocalizer.GetString("label_cmdRun", FrameworkGlobals.ApplicationLanguage);
-            communityForumsToolStripMenuItem.Text = Globals.LabelsLocalizer.GetString("label_communityForumsToolStripMenuItem", FrameworkGlobals.ApplicationLanguage);
             exitToolStripMenuItem.Text = Globals.LabelsLocalizer.GetString("label_exitToolStripMenuItem", FrameworkGlobals.ApplicationLanguage);
-            facebookToolStripMenuItem.Text = Globals.LabelsLocalizer.GetString("label_facebookToolStripMenuItem", FrameworkGlobals.ApplicationLanguage);
             fileToolStripMenuItem.Text = Globals.LabelsLocalizer.GetString("label_fileToolStripMenuItem", FrameworkGlobals.ApplicationLanguage);
             helpToolStripMenuItem.Text = Globals.LabelsLocalizer.GetString("label_helpToolStripMenuItem", FrameworkGlobals.ApplicationLanguage);
             languageToolStripMenuItem.Text = Globals.LabelsLocalizer.GetString("label_languageToolStripMenuItem", FrameworkGlobals.ApplicationLanguage);

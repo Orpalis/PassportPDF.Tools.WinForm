@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PassportPDF.Tools.WinForm</name>
+    </assembly>
+    <members>
+        <member name="T:PassportPDF.Tools.WinForm.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PassportPDF.Tools.WinForm.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PassportPDF.Tools.WinForm.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PassportPDF.Tools.WinForm.Properties.Resources.add_file">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PassportPDF.Tools.WinForm.Properties.Resources.add_folder">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PassportPDF.Tools.WinForm.Properties.Resources.edit">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PassportPDF.Tools.WinForm.Properties.Resources.loader">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="F:PassportPDF.Tools.WinForm.Views.frmAbout.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmAbout.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmAbout.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PassportPDF.Tools.WinForm.Views.frmFetchingInfoFromServer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmFetchingInfoFromServer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmFetchingInfoFromServer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PassportPDF.Tools.WinForm.Views.frmMustUpdate.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmMustUpdate.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmMustUpdate.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PassportPDF.Tools.WinForm.Views.frmNewVersionAvailable.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmNewVersionAvailable.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmNewVersionAvailable.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PassportPDF.Tools.WinForm.Views.frmOptionsBase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmOptionsBase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmOptionsBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PassportPDF.Tools.WinForm.Views.frmPassportInfo.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmPassportInfo.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmPassportInfo.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PassportPDF.Tools.WinForm.Views.frmRegisterPassport.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmRegisterPassport.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmRegisterPassport.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PassportPDF.Tools.WinForm.Views.frmUpdateInProgress.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmUpdateInProgress.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PassportPDF.Tools.WinForm.Views.frmUpdateInProgress.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,7 +1,7 @@
 /**********************************************************************
  * Project:                  PassportPDF.Tools.WinForm
- * Authors:                 - Evan Carrère.
- *                          - Loïc Carrère.
+ * Authors:                 - Evan Carrï¿½re.
+ *                          - Loï¿½c Carrï¿½re.
  *
  * (C) Copyright 2018, ORPALIS.
  ** Licensed under the Apache License, Version 2.0 (the "License");
@@ -79,8 +79,6 @@ namespace PassportPDF.Tools.WinForm.Views
             this.passportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.communityForumsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForLatestUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbStatus = new System.Windows.Forms.Label();
             this.fileSelectDlg = new System.Windows.Forms.OpenFileDialog();
@@ -364,8 +362,6 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
-            this.communityForumsToolStripMenuItem,
-            this.facebookToolStripMenuItem,
             this.checkForLatestUpdateToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(24, 20);
@@ -377,20 +373,6 @@ namespace PassportPDF.Tools.WinForm.Views
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // communityForumsToolStripMenuItem
-            // 
-            this.communityForumsToolStripMenuItem.Name = "communityForumsToolStripMenuItem";
-            this.communityForumsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.communityForumsToolStripMenuItem.Text = "Community Forums";
-            this.communityForumsToolStripMenuItem.Click += new System.EventHandler(this.communityForumsToolStripMenuItem_Click);
-            // 
-            // facebookToolStripMenuItem
-            // 
-            this.facebookToolStripMenuItem.Name = "facebookToolStripMenuItem";
-            this.facebookToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.facebookToolStripMenuItem.Text = "Facebook Community";
-            this.facebookToolStripMenuItem.Click += new System.EventHandler(this.facebookToolStripMenuItem_Click);
             // 
             // checkForLatestUpdateToolStripMenuItem
             // 
@@ -517,8 +499,6 @@ namespace PassportPDF.Tools.WinForm.Views
         private Label lbStatus;
         internal TabPage tabErrors;
         private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStripMenuItem communityForumsToolStripMenuItem;
-        private ToolStripMenuItem facebookToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem languageToolStripMenuItem;
         private OpenFileDialog fileSelectDlg;
