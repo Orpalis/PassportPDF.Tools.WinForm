@@ -7,3 +7,4 @@ PassportPDF.Tools.WinForm.nuspec
 PassportPDF.Tools.WinForm.localization_sheet.xlsx
 PassportPDF.Tools.WinForm.Debug.csproj
 package.Debug.config
+*.user

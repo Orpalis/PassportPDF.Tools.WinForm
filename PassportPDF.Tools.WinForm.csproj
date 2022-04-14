@@ -1,70 +1,71 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
-    <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyName>PassportPDF.Tools.WinForm</AssemblyName>
-    <RootNamespace>PassportPDF.Tools.WinForm</RootNamespace>
-    <ApplicationIcon />
-    <StartupObject />
-    <Version>1.0.57</Version>
-    <Copyright>Copyright ©  2018 - 2020 ORPALIS - http://www.orpalis.com</Copyright>
-    <Company>ORPALIS</Company>
-    <Authors>ORPALIS</Authors>
-    <RepositoryUrl>https://github.com/Orpalis/PassportPDF.Tools.Winform</RepositoryUrl>
-    <Description>Helper library to build WinForm productivity applications based on the PassportPDF API easily.</Description>
-    <PackageProjectUrl>http://www.passportpdf.com</PackageProjectUrl>
-    <PackageIconUrl>http://www.orpalis.com/images/ORPALIS/logos/PP-symbol-128.png</PackageIconUrl>
-    <AssemblyVersion>1.0.57.0</AssemblyVersion>
-    <FileVersion>1.0.57.0</FileVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+		<AssemblyName>PassportPDF.Tools.WinForm</AssemblyName>
+		<RootNamespace>PassportPDF.Tools.WinForm</RootNamespace>
+		<ApplicationIcon />
+		<StartupObject />
+		<Version>1.0.60</Version>
+		<Copyright>Copyright ©  2018 - 2022 ORPALIS - https://www.orpalis.com</Copyright>
+		<Company>ORPALIS</Company>
+		<Authors>ORPALIS</Authors>
+		<RepositoryUrl>https://github.com/Orpalis/PassportPDF.Tools.Winform</RepositoryUrl>
+		<Description>Helper library to build WinForm productivity applications based on the PassportPDF API easily.</Description>
+		<PackageProjectUrl>https://www.passportpdf.com</PackageProjectUrl>
+		<PackageIconUrl>http://www.orpalis.com/images/ORPALIS/logos/PP-symbol-128.png</PackageIconUrl>
+		<AssemblyVersion>1.0.60.0</AssemblyVersion>
+		<FileVersion>1.0.60.0</FileVersion>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>D:\gdpicture\nuget</OutputPath>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>D:\gdpicture\nuget</OutputPath>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\gdpicture\dev\DotNet\PassportPDF.Tools.WinForm\PassportPDF.Tools.WinForm.xml</DocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DocumentationFile>D:\gdpicture\dev\DotNet\PassportPDF.Tools.WinForm\PassportPDF.Tools.WinForm.xml</DocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="clean.bat" />
-    <None Remove="PassportPDF.Tools.WinForm.localization_sheet.xlsx" />
-    <None Remove="PassportPDF.Tools.WinForm.nuspec" />
-    <None Remove="res\add file.png" />
-    <None Remove="res\add_folder.png" />
-    <None Remove="res\edit.png" />
-    <None Remove="res\labels.json" />
-    <None Remove="res\loader.gif" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="clean.bat" />
+		<None Remove="PassportPDF.Tools.WinForm.localization_sheet.xlsx" />
+		<None Remove="PassportPDF.Tools.WinForm.nuspec" />
+		<None Remove="res\add file.png" />
+		<None Remove="res\add_folder.png" />
+		<None Remove="res\edit.png" />
+		<None Remove="res\labels.json" />
+		<None Remove="res\loader.gif" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="res\add file.png" />
-    <EmbeddedResource Include="res\add_folder.png" />
-    <EmbeddedResource Include="res\edit.png" />
-    <EmbeddedResource Include="res\labels.json" />
-    <EmbeddedResource Include="res\loader.gif" />
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="res\add file.png" />
+		<EmbeddedResource Include="res\add_folder.png" />
+		<EmbeddedResource Include="res\edit.png" />
+		<EmbeddedResource Include="res\labels.json" />
+		<EmbeddedResource Include="res\loader.gif" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="PassportPDF" Version="1.0.73" />
-    <PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.63" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="PassportPDF" Version="1.0.89" />
+		<PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.70" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
 </Project>

@@ -20,6 +20,7 @@ using System;
 using System.Windows.Forms;
 using System.Drawing;
 using PassportPDF.Tools.Framework;
+using System.Diagnostics;
 
 namespace PassportPDF.Tools.WinForm.Views
 {
@@ -51,17 +52,29 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private void lkPassportPdfWebsite_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.passportpdf.com");
+            Process.Start(new ProcessStartInfo("https://www.passportpdf.com")
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
 
-        private void btOrpalisWebsite_Clock(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btOrpalisWebsite_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.orpalis.com");
+            Process.Start(new ProcessStartInfo("https://www.orpalis.com")
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
 
         private void lkGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(lkGithub.Text);
+            Process.Start(new ProcessStartInfo(lkGithub.Text)
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
     }
 }

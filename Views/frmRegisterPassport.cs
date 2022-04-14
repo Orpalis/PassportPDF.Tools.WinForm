@@ -22,6 +22,7 @@ using PassportPDF.Tools.Framework.Utilities;
 using PassportPDF.Tools.Framework.Models;
 using PassportPDF.Tools.Framework;
 using PassportPDF.Tools.WinForm.Utilities;
+using System.Diagnostics;
 
 namespace PassportPDF.Tools.WinForm.Views
 {
@@ -137,7 +138,11 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private void rtbRegisterPassportInstructions_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(e.LinkText);
+            Process.Start(new ProcessStartInfo(e.LinkText)
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
     }
 }

@@ -1,7 +1,7 @@
 /**********************************************************************
  * Project:                  PassportPDF.Tools.WinForm
- * Authors:                 - Evan Carrère.
- *                          - Loïc Carrère.
+ * Authors:                 - Evan Carrè²¥.
+ *                          - Loï£ Carrè²¥.
  *
  * (C) Copyright 2018, ORPALIS.
  ** Licensed under the Apache License, Version 2.0 (the "License");
@@ -853,13 +853,21 @@ namespace PassportPDF.Tools.WinForm.Views
 
         private void communityForumsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("http://forums.orpalis.com/");
+            Process.Start(new ProcessStartInfo("https://www.gdpicture.com/forum/")
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
 
 
         private void facebookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.facebook.com/ORPALIS");
+            Process.Start(new ProcessStartInfo("https://www.facebook.com/ORPALIS")
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
 
 
@@ -903,7 +911,7 @@ namespace PassportPDF.Tools.WinForm.Views
         private void checkForLastUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool? newVersionAvailable = frmFetchingInfoFromServer.IsNewVersionAvailable(_controller.AppInfo.AppID, _controller.AppInfo.AppVersion, out string latestVersionNumber);
-            
+
             if (newVersionAvailable == true)
             {
                 _controller.OnAppUpdateAvailable(latestVersionNumber);

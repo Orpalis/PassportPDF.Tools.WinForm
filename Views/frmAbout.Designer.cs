@@ -59,9 +59,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             // btClose
             // 
-            this.btClose.Location = new System.Drawing.Point(12, 153);
+            this.btClose.Location = new System.Drawing.Point(14, 177);
+            this.btClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btClose.Name = "btClose";
-            this.btClose.Size = new System.Drawing.Size(306, 26);
+            this.btClose.Size = new System.Drawing.Size(357, 30);
             this.btClose.TabIndex = 0;
             this.btClose.Text = "Close";
             this.btClose.UseVisualStyleBackColor = true;
@@ -70,9 +71,10 @@ namespace PassportPDF.Tools.WinForm.Views
             // lkPassportPdfWebsite
             // 
             this.lkPassportPdfWebsite.AutoSize = true;
-            this.lkPassportPdfWebsite.Location = new System.Drawing.Point(133, 106);
+            this.lkPassportPdfWebsite.Location = new System.Drawing.Point(155, 122);
+            this.lkPassportPdfWebsite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lkPassportPdfWebsite.Name = "lkPassportPdfWebsite";
-            this.lkPassportPdfWebsite.Size = new System.Drawing.Size(148, 13);
+            this.lkPassportPdfWebsite.Size = new System.Drawing.Size(167, 15);
             this.lkPassportPdfWebsite.TabIndex = 17;
             this.lkPassportPdfWebsite.TabStop = true;
             this.lkPassportPdfWebsite.Text = "https://www.passportpdf.com";
@@ -81,37 +83,41 @@ namespace PassportPDF.Tools.WinForm.Views
             // lbBasedOn
             // 
             this.lbBasedOn.AutoSize = true;
-            this.lbBasedOn.Location = new System.Drawing.Point(12, 106);
+            this.lbBasedOn.Location = new System.Drawing.Point(14, 122);
+            this.lbBasedOn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBasedOn.Name = "lbBasedOn";
-            this.lbBasedOn.Size = new System.Drawing.Size(120, 13);
+            this.lbBasedOn.Size = new System.Drawing.Size(127, 15);
             this.lbBasedOn.TabIndex = 14;
             this.lbBasedOn.Text = "Based on PassportPDF:";
             // 
             // lkOrpalisWebsite
             // 
             this.lkOrpalisWebsite.AutoSize = true;
-            this.lkOrpalisWebsite.Location = new System.Drawing.Point(12, 82);
+            this.lkOrpalisWebsite.Location = new System.Drawing.Point(14, 95);
+            this.lkOrpalisWebsite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lkOrpalisWebsite.Name = "lkOrpalisWebsite";
-            this.lkOrpalisWebsite.Size = new System.Drawing.Size(118, 13);
+            this.lkOrpalisWebsite.Size = new System.Drawing.Size(139, 15);
             this.lkOrpalisWebsite.TabIndex = 13;
             this.lkOrpalisWebsite.TabStop = true;
-            this.lkOrpalisWebsite.Text = "http://www.orpalis.com";
-            this.lkOrpalisWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btOrpalisWebsite_Clock);
+            this.lkOrpalisWebsite.Text = "https://www.orpalis.com";
+            this.lkOrpalisWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btOrpalisWebsite_Click);
             // 
             // lbCopyright
             // 
             this.lbCopyright.AutoSize = true;
-            this.lbCopyright.Location = new System.Drawing.Point(12, 62);
+            this.lbCopyright.Location = new System.Drawing.Point(14, 72);
+            this.lbCopyright.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCopyright.Name = "lbCopyright";
-            this.lbCopyright.Size = new System.Drawing.Size(172, 13);
+            this.lbCopyright.Size = new System.Drawing.Size(184, 15);
             this.lbCopyright.TabIndex = 16;
-            this.lbCopyright.Text = "Copyright © ORPALIS 2017 - 2020";
+            this.lbCopyright.Text = "Copyright © ORPALIS 2017 - 2022";
             // 
             // picProductLogo
             // 
-            this.picProductLogo.Location = new System.Drawing.Point(12, 12);
+            this.picProductLogo.Location = new System.Drawing.Point(14, 14);
+            this.picProductLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picProductLogo.Name = "picProductLogo";
-            this.picProductLogo.Size = new System.Drawing.Size(159, 42);
+            this.picProductLogo.Size = new System.Drawing.Size(186, 48);
             this.picProductLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProductLogo.TabIndex = 15;
             this.picProductLogo.TabStop = false;
@@ -119,18 +125,20 @@ namespace PassportPDF.Tools.WinForm.Views
             // lbSourceCode
             // 
             this.lbSourceCode.AutoSize = true;
-            this.lbSourceCode.Location = new System.Drawing.Point(12, 127);
+            this.lbSourceCode.Location = new System.Drawing.Point(14, 147);
+            this.lbSourceCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSourceCode.Name = "lbSourceCode";
-            this.lbSourceCode.Size = new System.Drawing.Size(71, 13);
+            this.lbSourceCode.Size = new System.Drawing.Size(75, 15);
             this.lbSourceCode.TabIndex = 18;
             this.lbSourceCode.Text = "Source code:";
             // 
             // lkGithub
             // 
             this.lkGithub.AutoSize = true;
-            this.lkGithub.Location = new System.Drawing.Point(84, 127);
+            this.lkGithub.Location = new System.Drawing.Point(98, 147);
+            this.lkGithub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lkGithub.Name = "lkGithub";
-            this.lkGithub.Size = new System.Drawing.Size(65, 13);
+            this.lkGithub.Size = new System.Drawing.Size(73, 15);
             this.lkGithub.TabIndex = 19;
             this.lkGithub.TabStop = true;
             this.lkGithub.Text = "#github_link";
@@ -138,9 +146,9 @@ namespace PassportPDF.Tools.WinForm.Views
             // 
             // frmAbout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 186);
+            this.ClientSize = new System.Drawing.Size(385, 215);
             this.ControlBox = false;
             this.Controls.Add(this.lkGithub);
             this.Controls.Add(this.lbSourceCode);
@@ -151,10 +159,11 @@ namespace PassportPDF.Tools.WinForm.Views
             this.Controls.Add(this.lkOrpalisWebsite);
             this.Controls.Add(this.lbCopyright);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(346, 225);
+            this.MaximumSize = new System.Drawing.Size(401, 254);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(346, 225);
+            this.MinimumSize = new System.Drawing.Size(401, 254);
             this.Name = "frmAbout";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
